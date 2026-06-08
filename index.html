@@ -148,65 +148,85 @@
       <div id="coverageReport" class="coverage-grid"></div>
     </section>
 
-    <!-- ── WALMART SHOPPING LIST GRID ────────────────────────────────── -->
-    <section class="panel shopping-panel">
-      <div class="section-head">
+    <!-- ── SCOUT PLAN OUTPUT ─────────────────────────────────────────── -->
+    <section class="panel scout-output" id="scoutOutput">
+
+      <div class="output-header">
         <div>
-          <h2>Walmart Shopping List</h2>
-          <p class="panel-sub">Live grid — updates as you pick meals. Click <strong>Shop&nbsp;at&nbsp;Walmart</strong> on any row to search current prices.</p>
+          <h2>Your Camp Plan</h2>
+          <p class="panel-sub">Pick a tab, fill in names, then print — or download a file.</p>
         </div>
         <div class="btn-row">
-          <span class="grid-legend"><span class="legend-dot dot-meat"></span>Meat</span>
-          <span class="grid-legend"><span class="legend-dot dot-dairy"></span>Dairy</span>
-          <span class="grid-legend"><span class="legend-dot dot-produce"></span>Produce</span>
-          <span class="grid-legend"><span class="legend-dot dot-dry"></span>Dry Goods</span>
-          <span class="grid-legend"><span class="legend-dot dot-other"></span>Other</span>
-          <button id="downloadShoppingCsvBtn2" class="btn-secondary">Download .csv</button>
-        </div>
-      </div>
-
-      <div class="excel-wrap">
-        <table class="excel-grid" id="shoppingGrid">
-          <thead>
-            <tr>
-              <th class="xcol-chk"><input type="checkbox" id="checkAll" title="Check all" /></th>
-              <th class="xcol-cat">Category</th>
-              <th class="xcol-item">Item</th>
-              <th class="xcol-qty xnum">Qty</th>
-              <th class="xcol-unit">Unit</th>
-              <th class="xcol-product">Walmart Product</th>
-              <th class="xcol-price xnum">Est. Price</th>
-              <th class="xcol-meal">Used In</th>
-              <th class="xcol-link">Shop</th>
-            </tr>
-          </thead>
-          <tbody id="shoppingGridBody">
-            <tr class="xempty"><td colspan="9">Select meals above — your shopping list builds automatically.</td></tr>
-          </tbody>
-          <tfoot id="shoppingGridFoot"></tfoot>
-        </table>
-      </div>
-    </section>
-
-    <!-- ── OUTPUT / PREVIEW ───────────────────────────────────────────── -->
-    <section class="panel output-panel">
-      <div class="output-head">
-        <div>
-          <h2>Plan Preview &amp; Export</h2>
-          <p class="panel-sub">Generate a full plan then download what you need.</p>
-        </div>
-        <div class="btn-row">
-          <button id="generateBtn2" class="btn-primary">Generate Plan</button>
-          <button id="downloadMarkdownBtn" class="btn-secondary">Download .md</button>
-          <button id="downloadShoppingCsvBtn" class="btn-secondary">Shopping List .csv</button>
+          <button id="printScoutBtn" class="btn-primary">Print This Tab</button>
+          <span class="export-divider">Save for leaders:</span>
+          <button id="downloadShoppingCsvBtn" class="btn-secondary">Shopping .csv</button>
           <button id="downloadCostCsvBtn" class="btn-secondary">Cost Report .csv</button>
           <button id="downloadJsonBtn" class="btn-secondary">Plan .json</button>
-          <button id="printBtn" class="btn-ghost">Print</button>
         </div>
       </div>
-      <div class="preview-wrap">
-        <textarea id="planOutput" readonly placeholder="Hit Generate Plan to see the full recipe guide, shopping list with Walmart prices, cost breakdown, and cooking schedule."></textarea>
+
+      <!-- Tab bar -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab-btn active" data-tab="shopping" role="tab">Shopping List</button>
+        <button class="tab-btn" data-tab="recipes"  role="tab">Recipe Cards</button>
+        <button class="tab-btn" data-tab="schedule" role="tab">Schedule &amp; Duties</button>
       </div>
+
+      <!-- ── TAB 1: Shopping List ──────────────────────────────────── -->
+      <div class="tab-pane" id="tab-shopping">
+        <div class="tab-intro">
+          <p>Check off items as you put them in the cart. Click <strong>Shop at Walmart</strong> to search the current price.</p>
+          <div class="legend-row">
+            <span class="grid-legend"><span class="legend-dot dot-meat"></span>Meat &amp; Protein</span>
+            <span class="grid-legend"><span class="legend-dot dot-dairy"></span>Dairy &amp; Eggs</span>
+            <span class="grid-legend"><span class="legend-dot dot-produce"></span>Produce &amp; Canned</span>
+            <span class="grid-legend"><span class="legend-dot dot-dry"></span>Dry Goods</span>
+            <span class="grid-legend"><span class="legend-dot dot-other"></span>Other</span>
+          </div>
+        </div>
+        <div class="excel-wrap">
+          <table class="excel-grid" id="shoppingGrid">
+            <thead>
+              <tr>
+                <th class="xcol-chk"><input type="checkbox" id="checkAll" title="Check all" /></th>
+                <th class="xcol-cat">Cat.</th>
+                <th class="xcol-item">Item</th>
+                <th class="xcol-qty xnum">Qty</th>
+                <th class="xcol-unit">Unit</th>
+                <th class="xcol-product">Walmart Product</th>
+                <th class="xcol-price xnum">Est. Price</th>
+                <th class="xcol-meal">Used In</th>
+                <th class="xcol-link">Shop</th>
+              </tr>
+            </thead>
+            <tbody id="shoppingGridBody">
+              <tr class="xempty"><td colspan="9">Select meals above — your shopping list builds automatically.</td></tr>
+            </tbody>
+            <tfoot id="shoppingGridFoot"></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── TAB 2: Recipe Cards ───────────────────────────────────── -->
+      <div class="tab-pane hidden" id="tab-recipes">
+        <div class="tab-intro">
+          <p>One card per meal — ingredients scaled to your group. Print and give each cook lead their card.</p>
+        </div>
+        <div id="recipeCardsOutput" class="recipe-cards-grid">
+          <div class="empty-plan-msg">Select meals above to generate recipe cards.</div>
+        </div>
+      </div>
+
+      <!-- ── TAB 3: Schedule & Duties ─────────────────────────────── -->
+      <div class="tab-pane hidden" id="tab-schedule">
+        <div class="tab-intro">
+          <p>Fill in names before you print. Every scout needs a job for every meal.</p>
+        </div>
+        <div id="scheduleOutput">
+          <div class="empty-plan-msg">Select meals above to generate the schedule.</div>
+        </div>
+      </div>
+
     </section>
 
   </main>

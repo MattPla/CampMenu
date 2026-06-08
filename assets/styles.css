@@ -525,13 +525,229 @@ footer {
 .dot-dry     { background: #c08040; }
 .dot-other   { background: #8090b0; }
 
+/* ── Scout output section ────────────────────────────────────────────────── */
+.scout-output { }
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.export-divider {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--muted);
+  align-self: center;
+  padding-left: 6px;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 20px;
+}
+.tab-btn {
+  padding: 10px 22px;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  transform: none;
+  box-shadow: none;
+}
+.tab-btn:hover { background: var(--green-light); color: var(--green); transform: none; box-shadow: none; }
+.tab-btn.active {
+  background: var(--panel);
+  color: var(--green);
+  border-color: var(--line);
+  border-bottom-color: var(--panel);
+  margin-bottom: -2px;
+}
+.tab-pane { }
+.tab-pane.hidden { display: none; }
+.tab-intro { margin-bottom: 14px; }
+.tab-intro p { color: var(--muted); font-size: .9rem; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.empty-plan-msg { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 1rem; font-style: italic; }
+
+/* ── Recipe cards ────────────────────────────────────────────────────────── */
+.recipe-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 20px;
+}
+.rcp-card {
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.rcp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #f0f7f0;
+  border-bottom: 2px solid var(--line);
+}
+.meal-header-breakfast { background: #fffde6; border-color: #f5d020; }
+.meal-header-lunch     { background: #e8f4ff; border-color: #7ab8f5; }
+.meal-header-dinner    { background: #f0eaff; border-color: #b07af5; }
+.meal-header-dessert   { background: #ffe8f2; border-color: #f57aaa; }
+.rcp-context { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); opacity: .7; }
+.rcp-cost-badge { font-size: .95rem; font-weight: 900; color: var(--green); }
+.rcp-card-body { padding: 14px 16px; display: grid; gap: 14px; }
+.rcp-title { font-size: 1.3rem; font-weight: 900; margin: 0; color: var(--ink); }
+.rcp-stats-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .88rem; }
+.rcp-stat { color: var(--ink); }
+.rcp-stat strong { color: var(--green); }
+.rcp-stat-total { font-weight: 700; }
+.rcp-stat-sep { color: var(--muted); }
+.rcp-stat-div { color: var(--line); margin: 0 2px; }
+.rcp-section { }
+.rcp-label {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.rcp-ing-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 5px; }
+.rcp-ing-row { display: flex; align-items: baseline; gap: 8px; cursor: pointer; }
+.rcp-check { width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; accent-color: var(--green); }
+.rcp-ing-qty { font-weight: 800; min-width: 56px; color: var(--green); font-size: .9rem; white-space: nowrap; }
+.rcp-ing-name { font-size: .9rem; }
+.rcp-ing-store { font-size: .75rem; color: var(--muted); font-style: italic; margin-left: 4px; }
+.rcp-check:checked ~ .rcp-ing-name,
+.rcp-check:checked ~ .rcp-ing-qty { text-decoration: line-through; opacity: .5; }
+.rcp-equip { font-size: .88rem; color: var(--ink); line-height: 1.7; }
+.rcp-directions { font-size: .9rem; line-height: 1.6; color: var(--ink); }
+.rcp-tips { padding-left: 18px; margin-top: 8px; display: grid; gap: 4px; }
+.rcp-tips li { font-size: .85rem; color: var(--muted); }
+.rcp-duties-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+.rcp-duties-row label { font-size: .75rem; font-weight: 700; color: var(--muted); display: grid; gap: 4px; }
+
+/* ── Schedule & Duties ───────────────────────────────────────────────────── */
+.sched-summary {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  font-size: .9rem;
+}
+.sched-summary span strong { color: var(--green); }
+.sched-day { margin-bottom: 22px; }
+.sched-day-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--green-dark);
+  padding: 8px 0 10px;
+  border-bottom: 3px solid var(--green);
+  margin-bottom: 12px;
+}
+.sched-meal-block {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: #fdfaf4;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.sched-meal-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.sched-recipe-name { font-weight: 800; font-size: 1rem; }
+.sched-time-info { font-size: .85rem; color: var(--muted); }
+.sched-time-info strong { color: var(--ink); }
+.sched-cost { margin-left: auto; font-weight: 800; color: var(--green); font-size: .9rem; }
+.sched-duties {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.duty-label {
+  display: grid;
+  gap: 4px;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.duty-field {
+  padding: 7px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: .88rem;
+  font-family: inherit;
+  width: 100%;
+}
+.duty-field.wide { }
+.sched-grubmaster {
+  border: 2px solid var(--green);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-top: 20px;
+  background: var(--green-light);
+}
+.sched-grubmaster h3 { margin-bottom: 14px; color: var(--green-dark); }
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
-  .hero-card, .budget-bar-wrap, .section-build, .filters,
-  .recipe-list, .btn-row, .output-head .btn-row, footer { display: none !important; }
-  body { background: #fff; }
-  .panel { box-shadow: none; border: 1px solid #ccc; }
-  #planOutput { border: none; min-height: unset; font-size: .78rem; }
+  /* Hide everything except the active tab pane */
+  .hero, .budget-bar-wrap, .section-build, .two-col,
+  .section-head, .coverage-grid, .panel:not(.scout-output),
+  .tab-bar, .output-header, footer, .tab-intro .legend-row { display: none !important; }
+
+  .scout-output { box-shadow: none; border: none; padding: 0; }
+  .tab-pane.hidden { display: none !important; }
+  .tab-pane { display: block !important; }
+
+  /* Shopping list print */
+  .excel-wrap { border: none; }
+  .excel-grid { font-size: .8rem; }
+  .walmart-btn { display: none; }
+
+  /* Recipe cards print — 2 per page */
+  .recipe-cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rcp-card { border: 1.5px solid #999; }
+  .rcp-duties-row label { font-size: .7rem; }
+  .duty-field { border-bottom: 1px solid #999; border-top: none; border-left: none; border-right: none; border-radius: 0; background: transparent; }
+
+  /* Schedule print */
+  .sched-duties { grid-template-columns: repeat(4, 1fr); }
+  .duty-field { border-bottom: 1px solid #999; border-top: none; border-left: none; border-right: none; border-radius: 0; background: transparent; }
+  body { background: white; font-size: 11pt; }
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────────── */

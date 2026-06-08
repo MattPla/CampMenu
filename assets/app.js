@@ -582,16 +582,169 @@ function currentPlanJson() {
   }, null, 2);
 }
 
+// ── Recipe cards HTML ─────────────────────────────────────────────────────────
+function buildRecipeCardsHtml() {
+  const entries = selectedMealEntries();
+  const people = getPeople();
+  if (!entries.length) return '<div class="empty-plan-msg">Select meals above to generate recipe cards.</div>';
+
+  return entries.map(e => {
+    const r = e.recipe;
+    const cost = getRecipeCost(r.id, r.meal_type);
+    const isGrabGo = r.grab_and_go;
+    const ingredients = scaledIngredientRows().filter(x => x.recipe === r.title && x.day === e.day && x.meal === e.meal);
+    const equip = (r.equipment || []).filter(eq => eq !== '—');
+
+    const statsBar = isGrabGo
+      ? `<span class="badge badge-gg">Grab &amp; Go — No cooking, no cleanup</span>`
+      : `<span class="rcp-stat"><strong>${r.prep_minutes}</strong> min prep</span>
+         <span class="rcp-stat-sep">+</span>
+         <span class="rcp-stat"><strong>${r.cook_minutes}</strong> min cook</span>
+         <span class="rcp-stat-sep">=</span>
+         <span class="rcp-stat rcp-stat-total"><strong>${r.total_minutes}</strong> min total</span>
+         <span class="rcp-stat-div">|</span>
+         <span class="rcp-stat">Difficulty <strong>${r.difficulty}/5</strong></span>`;
+
+    const ingHtml = ingredients.length
+      ? `<div class="rcp-section">
+           <div class="rcp-label">Ingredients for <strong>${people} scouts</strong></div>
+           <ul class="rcp-ing-list">
+             ${ingredients.map(ing => `
+               <li>
+                 <label class="rcp-ing-row">
+                   <input type="checkbox" class="rcp-check">
+                   <span class="rcp-ing-qty">${ing.amount}&nbsp;${ing.unit}</span>
+                   <span class="rcp-ing-name">${ing.item}${ing.type === 'estimate' ? ' <em class="est-tag">(estimate)</em>' : ''}</span>
+                   ${ing.walmart_item ? `<span class="rcp-ing-store">${ing.walmart_item}</span>` : ''}
+                 </label>
+               </li>`).join('')}
+           </ul>
+         </div>`
+      : '';
+
+    const equipHtml = equip.length
+      ? `<div class="rcp-section">
+           <div class="rcp-label">Equipment</div>
+           <p class="rcp-equip">${equip.join(' &nbsp;&bull;&nbsp; ')}</p>
+         </div>`
+      : '';
+
+    const notesHtml = r.cook_notes && r.cook_notes.length
+      ? `<ul class="rcp-tips">${r.cook_notes.map(n => `<li>${n}</li>`).join('')}</ul>`
+      : '';
+
+    return `
+    <div class="rcp-card">
+      <div class="rcp-card-header meal-header-${e.meal}">
+        <span class="rcp-context">${e.day} &bull; ${niceMeal(e.meal)}</span>
+        <div class="rcp-cost-badge">${fmtMoney(cost)}<span class="per-scout">/scout</span></div>
+      </div>
+      <div class="rcp-card-body">
+        <h3 class="rcp-title">${r.title}</h3>
+        <div class="rcp-stats-bar">${statsBar}</div>
+        ${ingHtml}
+        ${equipHtml}
+        <div class="rcp-section">
+          <div class="rcp-label">${isGrabGo ? 'What to do' : 'How to cook it'}</div>
+          <p class="rcp-directions">${r.directions_summary || 'See full recipe for directions.'}</p>
+          ${notesHtml}
+        </div>
+        <div class="rcp-duties-row">
+          <label>Cook lead: <input type="text" class="duty-field" placeholder="Name"></label>
+          <label>Fire / stove: <input type="text" class="duty-field" placeholder="Name"></label>
+          <label>Cleanup: <input type="text" class="duty-field" placeholder="Names"></label>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Schedule & duties HTML ────────────────────────────────────────────────────
+function buildScheduleHtml() {
+  const entries = selectedMealEntries();
+  const people = getPeople();
+  if (!entries.length) return '<div class="empty-plan-msg">Select meals above to generate the schedule.</div>';
+
+  // Group by day
+  const byDay = new Map();
+  days.forEach(day => byDay.set(day.name, []));
+  entries.forEach(e => {
+    if (byDay.has(e.day)) byDay.get(e.day).push(e);
+    else byDay.set(e.day, [e]);
+  });
+
+  let totalPerKid = 0;
+  entries.forEach(e => { totalPerKid += getRecipeCost(e.recipe.id, e.recipe.meal_type); });
+
+  let html = `
+  <div class="sched-summary">
+    <span><strong>${entries.length}</strong> meals planned</span>
+    <span><strong>${people}</strong> scouts eating</span>
+    <span>Total cost: <strong>${fmtMoney(totalPerKid)}/scout</strong> &nbsp;&bull;&nbsp; <strong>${fmtMoney(totalPerKid * people)}</strong> total</span>
+  </div>`;
+
+  for (const [dayName, meals] of byDay) {
+    if (!meals.length) continue;
+    html += `<div class="sched-day"><div class="sched-day-name">${dayName}</div>`;
+    for (const e of meals) {
+      const r = e.recipe;
+      const isGrabGo = r.grab_and_go;
+      const cost = getRecipeCost(r.id, r.meal_type);
+      html += `
+      <div class="sched-meal-block">
+        <div class="sched-meal-top">
+          <span class="meal-badge meal-${e.meal}">${niceMeal(e.meal)}</span>
+          <span class="sched-recipe-name">${r.title}</span>
+          ${isGrabGo
+            ? '<span class="badge badge-gg">No Cook</span>'
+            : `<span class="sched-time-info">${r.prep_minutes}&nbsp;min prep &nbsp;+&nbsp; ${r.cook_minutes}&nbsp;min cook &nbsp;=&nbsp; <strong>${r.total_minutes}&nbsp;min</strong></span>`
+          }
+          <span class="sched-cost">${fmtMoney(cost)}/scout</span>
+        </div>
+        <div class="sched-duties">
+          <label class="duty-label">Cook lead <input type="text" class="duty-field" placeholder="Name..."></label>
+          <label class="duty-label">${isGrabGo ? 'Hand out' : 'Fire / stove'} <input type="text" class="duty-field" placeholder="Name..."></label>
+          <label class="duty-label">Cleanup crew <input type="text" class="duty-field" placeholder="Names..."></label>
+          <label class="duty-label">Notes <input type="text" class="duty-field wide" placeholder="e.g. start charcoal 45 min early..."></label>
+        </div>
+      </div>`;
+    }
+    html += '</div>';
+  }
+
+  html += `
+  <div class="sched-grubmaster">
+    <h3>Grubmaster &amp; Purchasing</h3>
+    <div class="sched-duties">
+      <label class="duty-label">Grubmaster <input type="text" class="duty-field" placeholder="Name..."></label>
+      <label class="duty-label">Shopping date <input type="text" class="duty-field" placeholder="Date..."></label>
+      <label class="duty-label">Total budget approved <input type="text" class="duty-field" placeholder="$..."></label>
+      <label class="duty-label">Receipts to <input type="text" class="duty-field" placeholder="Name..."></label>
+    </div>
+  </div>`;
+
+  return html;
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+function switchTab(tabName) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+  document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.toggle('hidden', pane.id !== 'tab-' + tabName));
+}
+
+// ── Render scout output tabs ──────────────────────────────────────────────────
+function renderScoutOutput() {
+  $('recipeCardsOutput').innerHTML = buildRecipeCardsHtml();
+  $('scheduleOutput').innerHTML = buildScheduleHtml();
+}
+
 // ── Render all ────────────────────────────────────────────────────────────────
 function renderAll() {
   renderCoverage();
   renderCostTable();
   renderBudgetMeter();
   renderShoppingGrid();
-}
-
-function generatePlan() {
-  $('planOutput').value = buildMarkdown();
+  renderScoutOutput();
 }
 
 // ── Event wiring ──────────────────────────────────────────────────────────────
@@ -601,18 +754,21 @@ $('addDayBtn').addEventListener('click', () => {
 });
 $('clearPlanBtn').addEventListener('click', () => {
   days = days.map(d => ({ ...d, meals: { breakfast: '', lunch: '', dinner: '', dessert: '' } }));
-  renderDays(); renderAll(); $('planOutput').value = '';
+  renderDays(); renderAll();
 });
-['generateBtn', 'generateBtn2'].forEach(id => $(id).addEventListener('click', generatePlan));
-$('downloadMarkdownBtn').addEventListener('click', () => download(`camp-menu-${slugDate()}.md`, buildMarkdown(), 'text/markdown'));
+$('generateBtn').addEventListener('click', () => {
+  switchTab('recipes');
+  renderScoutOutput();
+});
+$('printScoutBtn').addEventListener('click', () => window.print());
 $('downloadShoppingCsvBtn').addEventListener('click', () => download(`walmart-shopping-${slugDate()}.csv`, shoppingCsv(), 'text/csv'));
-$('downloadShoppingCsvBtn2').addEventListener('click', () => download(`walmart-shopping-${slugDate()}.csv`, shoppingCsv(), 'text/csv'));
 $('downloadCostCsvBtn').addEventListener('click', () => download(`cost-report-${slugDate()}.csv`, costReportCsv(), 'text/csv'));
 $('downloadJsonBtn').addEventListener('click', () => download(`camp-plan-${slugDate()}.json`, currentPlanJson(), 'application/json'));
-$('printBtn').addEventListener('click', () => { generatePlan(); window.print(); });
+
+document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
 ['searchBox', 'mealFilter', 'difficultyFilter', 'costFilter', 'cookFilter'].forEach(id => $(id).addEventListener('input', renderRecipeList));
-$('peopleCount').addEventListener('input', () => { renderBudgetMeter(); renderCostTable(); renderShoppingGrid(); if ($('planOutput').value) generatePlan(); });
+$('peopleCount').addEventListener('input', () => { renderBudgetMeter(); renderCostTable(); renderShoppingGrid(); renderScoutOutput(); });
 $('budgetPerKid').addEventListener('input', renderBudgetMeter);
 
 // ── Init ─────────────────────────────────────────────────────────────────────
