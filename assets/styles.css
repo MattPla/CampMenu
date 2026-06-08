@@ -634,6 +634,12 @@ footer {
 .rcp-check:checked ~ .rcp-ing-qty { text-decoration: line-through; opacity: .5; }
 .rcp-equip { font-size: .88rem; color: var(--ink); line-height: 1.7; }
 .rcp-directions { font-size: .9rem; line-height: 1.6; color: var(--ink); }
+.rcp-cook-equip { font-size: .82rem; font-weight: 600; color: var(--green-dark); background: var(--green-light); border-radius: 6px; padding: 4px 10px; margin-bottom: 10px; }
+.rcp-steps { padding-left: 20px; margin: 0 0 10px; display: grid; gap: 6px; }
+.rcp-steps li { font-size: .9rem; line-height: 1.55; color: var(--ink); }
+.rcp-steps li::marker { font-weight: 700; color: var(--green); }
+.rcp-done-when { font-size: .85rem; color: #1a6630; background: #d4edda; border-radius: 6px; padding: 5px 10px; margin-bottom: 6px; }
+.rcp-safety { font-size: .82rem; color: #7b3a00; background: #fff3cd; border-radius: 6px; padding: 5px 10px; margin-bottom: 6px; }
 .rcp-tips { padding-left: 18px; margin-top: 8px; display: grid; gap: 4px; }
 .rcp-tips li { font-size: .85rem; color: var(--muted); }
 .rcp-duties-row {

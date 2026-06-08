@@ -582,6 +582,19 @@ function currentPlanJson() {
   }, null, 2);
 }
 
+// ── Cooking steps HTML helper ─────────────────────────────────────────────────
+function buildCookingStepsHtml(r, isGrabGo, notesHtml) {
+  const ci = (window.COOKING_INSTRUCTIONS || {})[r.id];
+  if (ci && ci.steps && ci.steps.length) {
+    const equip = ci.equipment ? `<p class="rcp-cook-equip"><strong>Equipment:</strong> ${ci.equipment}</p>` : '';
+    const steps = `<ol class="rcp-steps">${ci.steps.map(s => `<li>${s}</li>`).join('')}</ol>`;
+    const done = ci.done_when ? `<p class="rcp-done-when"><strong>Done when:</strong> ${ci.done_when}</p>` : '';
+    const safety = ci.safety ? `<p class="rcp-safety"><strong>Safety:</strong> ${ci.safety}</p>` : '';
+    return equip + steps + done + safety + notesHtml;
+  }
+  return `<p class="rcp-directions">${r.directions_summary || 'See full recipe for directions.'}</p>${notesHtml}`;
+}
+
 // ── Recipe cards HTML ─────────────────────────────────────────────────────────
 function buildRecipeCardsHtml() {
   const entries = selectedMealEntries();
@@ -646,8 +659,7 @@ function buildRecipeCardsHtml() {
         ${equipHtml}
         <div class="rcp-section">
           <div class="rcp-label">${isGrabGo ? 'What to do' : 'How to cook it'}</div>
-          <p class="rcp-directions">${r.directions_summary || 'See full recipe for directions.'}</p>
-          ${notesHtml}
+          ${buildCookingStepsHtml(r, isGrabGo, notesHtml)}
         </div>
         <div class="rcp-duties-row">
           <label>Cook lead: <input type="text" class="duty-field" placeholder="Name"></label>
