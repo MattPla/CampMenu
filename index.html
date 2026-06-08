@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scout Camp Menu Builder</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-title">
+      <div class="eyebrow">BSA Scout Patrol</div>
+      <h1>Camp Menu Builder</h1>
+      <p class="lead">Plan meals, stay on budget, get your Walmart shopping list.</p>
+    </div>
+    <div class="hero-card">
+      <div class="hero-fields">
+        <div class="field-group">
+          <label for="campName">Campout name</label>
+          <input id="campName" type="text" value="Weekend Campout" />
+        </div>
+        <div class="field-group">
+          <label for="peopleCount">Scouts eating</label>
+          <input id="peopleCount" type="number" min="1" value="12" />
+        </div>
+        <div class="field-group">
+          <label for="budgetPerKid">Budget per scout ($)</label>
+          <input id="budgetPerKid" type="number" min="0" step="0.50" value="25.00" />
+        </div>
+      </div>
+      <button id="generateBtn" class="btn-primary">Generate Plan</button>
+    </div>
+  </header>
+
+  <!-- ── BUDGET METER ──────────────────────────────────────────────────── -->
+  <div class="budget-bar-wrap">
+    <div class="budget-bar-inner">
+      <div class="budget-stats">
+        <div class="budget-stat">
+          <span class="stat-label">Budget per scout</span>
+          <span class="stat-value" id="budgetDisplay">$25.00</span>
+        </div>
+        <div class="budget-stat highlight">
+          <span class="stat-label">Current cost per scout</span>
+          <span class="stat-value" id="costPerKidDisplay">$0.00</span>
+        </div>
+        <div class="budget-stat">
+          <span class="stat-label">Remaining</span>
+          <span class="stat-value" id="remainingDisplay">$25.00</span>
+        </div>
+        <div class="budget-stat">
+          <span class="stat-label">Total trip cost</span>
+          <span class="stat-value" id="totalCostDisplay">$0.00</span>
+        </div>
+      </div>
+      <div class="meter-track">
+        <div class="meter-fill" id="budgetMeterFill"></div>
+        <span class="meter-label" id="budgetMeterLabel">0% of budget</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── BUILD MENU ──────────────────────────────────────────────────── -->
+    <section class="panel section-build">
+      <div class="section-head">
+        <div>
+          <h2>Build Your Menu</h2>
+          <p>Add days, pick meals for each slot. Costs update automatically.</p>
+        </div>
+        <div class="btn-row">
+          <button id="addDayBtn" class="btn-secondary">+ Add Day</button>
+          <button id="clearPlanBtn" class="btn-ghost">Clear All</button>
+        </div>
+      </div>
+      <div id="daysContainer" class="days-grid"></div>
+    </section>
+
+    <!-- ── COST TABLE + RECIPE FINDER ─────────────────────────────────── -->
+    <section class="two-col">
+
+      <!-- Cost breakdown table -->
+      <div class="panel">
+        <h2>Cost Per Scout Breakdown</h2>
+        <p class="panel-sub">See exactly how each meal affects your budget.</p>
+        <div class="table-wrap">
+          <table id="costTable" class="cost-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Meal</th>
+                <th>Recipe</th>
+                <th class="num">$/Scout</th>
+                <th class="num">Running Total</th>
+              </tr>
+            </thead>
+            <tbody id="costTableBody">
+              <tr class="empty-row"><td colspan="5">No meals selected yet. Add meals above.</td></tr>
+            </tbody>
+            <tfoot id="costTableFoot"></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recipe finder -->
+      <div class="panel">
+        <h2>Recipe Finder</h2>
+        <div class="filters">
+          <input id="searchBox" type="search" placeholder="Search recipes, tags, tools..." />
+          <select id="mealFilter">
+            <option value="all">All meal types</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="dessert">Dessert</option>
+          </select>
+          <select id="difficultyFilter">
+            <option value="all">Any difficulty</option>
+            <option value="1">Easy (1)</option>
+            <option value="2">2 or less</option>
+            <option value="3">3 or less</option>
+            <option value="4">4 or less</option>
+            <option value="5">Any</option>
+          </select>
+          <select id="costFilter">
+            <option value="all">Any cost</option>
+            <option value="2">Under $2/scout</option>
+            <option value="3">Under $3/scout</option>
+            <option value="4">Under $4/scout</option>
+          </select>
+          <select id="cookFilter">
+            <option value="all">All options</option>
+            <option value="grab_and_go">Grab &amp; Go only</option>
+            <option value="no_cook">No-cook only</option>
+          </select>
+        </div>
+        <div id="recipeList" class="recipe-list"></div>
+      </div>
+
+    </section>
+
+    <!-- ── COVERAGE ───────────────────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Menu Coverage</h2>
+      <div id="coverageReport" class="coverage-grid"></div>
+    </section>
+
+    <!-- ── WALMART SHOPPING LIST GRID ────────────────────────────────── -->
+    <section class="panel shopping-panel">
+      <div class="section-head">
+        <div>
+          <h2>Walmart Shopping List</h2>
+          <p class="panel-sub">Live grid — updates as you pick meals. Click <strong>Shop&nbsp;at&nbsp;Walmart</strong> on any row to search current prices.</p>
+        </div>
+        <div class="btn-row">
+          <span class="grid-legend"><span class="legend-dot dot-meat"></span>Meat</span>
+          <span class="grid-legend"><span class="legend-dot dot-dairy"></span>Dairy</span>
+          <span class="grid-legend"><span class="legend-dot dot-produce"></span>Produce</span>
+          <span class="grid-legend"><span class="legend-dot dot-dry"></span>Dry Goods</span>
+          <span class="grid-legend"><span class="legend-dot dot-other"></span>Other</span>
+          <button id="downloadShoppingCsvBtn2" class="btn-secondary">Download .csv</button>
+        </div>
+      </div>
+
+      <div class="excel-wrap">
+        <table class="excel-grid" id="shoppingGrid">
+          <thead>
+            <tr>
+              <th class="xcol-chk"><input type="checkbox" id="checkAll" title="Check all" /></th>
+              <th class="xcol-cat">Category</th>
+              <th class="xcol-item">Item</th>
+              <th class="xcol-qty xnum">Qty</th>
+              <th class="xcol-unit">Unit</th>
+              <th class="xcol-product">Walmart Product</th>
+              <th class="xcol-price xnum">Est. Price</th>
+              <th class="xcol-meal">Used In</th>
+              <th class="xcol-link">Shop</th>
+            </tr>
+          </thead>
+          <tbody id="shoppingGridBody">
+            <tr class="xempty"><td colspan="9">Select meals above — your shopping list builds automatically.</td></tr>
+          </tbody>
+          <tfoot id="shoppingGridFoot"></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── OUTPUT / PREVIEW ───────────────────────────────────────────── -->
+    <section class="panel output-panel">
+      <div class="output-head">
+        <div>
+          <h2>Plan Preview &amp; Export</h2>
+          <p class="panel-sub">Generate a full plan then download what you need.</p>
+        </div>
+        <div class="btn-row">
+          <button id="generateBtn2" class="btn-primary">Generate Plan</button>
+          <button id="downloadMarkdownBtn" class="btn-secondary">Download .md</button>
+          <button id="downloadShoppingCsvBtn" class="btn-secondary">Shopping List .csv</button>
+          <button id="downloadCostCsvBtn" class="btn-secondary">Cost Report .csv</button>
+          <button id="downloadJsonBtn" class="btn-secondary">Plan .json</button>
+          <button id="printBtn" class="btn-ghost">Print</button>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <textarea id="planOutput" readonly placeholder="Hit Generate Plan to see the full recipe guide, shopping list with Walmart prices, cost breakdown, and cooking schedule."></textarea>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>100% client-side &mdash; no server needed. All prices are Walmart estimates and may vary by location.</p>
+  </footer>
+
+  <script src="data/recipes.js"></script>
+  <script src="data/walmart_prices.js"></script>
+  <script src="data/grab_and_go.js"></script>
+  <script src="data/recipe_details.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+id,title,status,meal_type,categories,default_servings,scaling_model,prep_minutes,cook_minutes,total_minutes,difficulty,effort,patrol_fit,equipment,protein_tags,food_safety_flags
+chili-mac,Chili Mac,exact_quantities,dinner,chili; pasta,6,linear_batch,10,45,55,3,medium,good,Cooking pot; Cutting board; Dutch oven; Knife; Ladle,varies/unknown,
+cowboy-stew,Cowboy Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+dessert-burritos,Dessert Burritos,planning_estimate,dessert,burrito,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+dutch-oven-pies,Dutch Oven Pies,planning_estimate,dessert,dutch_oven,12,linear_batch,15,40,55,4,high,adult_or_experienced_scout,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+dutch-oven-pizza,Dutch Oven Pizza,planning_estimate,dinner,dutch_oven; pizza,8,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+monkey-bread,Monkey Bread,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,3,medium,good,Cutting board; Dutch oven; Knife,varies/unknown,
+pancakes,Pancakes,planning_estimate,breakfast,camp_meal,8,linear_batch,15,35,50,1,very_low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+pecs-breakfast,PECS Breakfast,planning_estimate,breakfast,breakfast,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+pie-iron-pies,Pie Iron Pies,planning_estimate,dessert,pie_iron,12,linear_batch,15,35,50,2,low,good,Campfire; Cutting board; Knife; Pie iron,varies/unknown,
+pizza-for-breakfast,Pizza for Breakfast,planning_estimate,breakfast,breakfast; pizza,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+pocket-pizza,Pocket Pizza,planning_estimate,dinner,pizza,8,linear_batch,10,25,35,2,low,excellent,Campfire; Cutting board; Knife; Pie iron,varies/unknown,
+simple-breakfast-burritos,Simple Breakfast Burritos,planning_estimate,breakfast,breakfast; burrito,8,linear_batch,15,25,40,1,very_low,excellent,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+taco-in-a-bag,Taco in a Bag,planning_estimate,lunch,taco,1,per_person,10,10,20,1,very_low,excellent,Bag Meal; Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+train-wreck,Train Wreck,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+2-hour-chili,2 hour Chili,planning_estimate,dinner,chili,8,linear_batch,15,120,135,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+30-minute-stew,30 Minute Stew,planning_estimate,dinner,stew,8,linear_batch,10,30,40,1,very_low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+5-alarm-chili,5 Alarm Chili,planning_estimate,dinner,chili,8,linear_batch,10,45,55,3,medium,good,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+a-w-chili-dogs,A&W Chili Dogs,planning_estimate,lunch,chili,8,linear_batch,10,45,55,1,very_low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+apple-crisp,Apple Crisp,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+apple-fluff,Apple Fluff,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+armadillo-eggs,Armadillo Eggs,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,eggs,
+au-gratin-ham-and-potatoes,Au Gratin Ham and Potatoes,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,pork,
+bacon-chicken-nuggets,Bacon Chicken Nuggets,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken; pork,raw_poultry; raw_or_perishable_protein
+bacon-spuds,Bacon Spuds,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork,raw_or_perishable_protein
+baked-beans,Baked Beans,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,beans/legumes,
+baked-salmon,Baked Salmon,planning_estimate,dinner,fish,8,linear_batch,10,25,35,3,medium,good,Bake; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,fish,raw_or_perishable_protein
+baking-powder-biscuits,Baking Powder Biscuits,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+banana-boats,Banana Boats,planning_estimate,dessert,camp_meal,12,linear_batch,10,10,20,1,very_low,good,Camp stove; Cutting board; Knife,varies/unknown,
+banana-coffee-cake,Banana Coffee Cake,planning_estimate,dessert,camp_meal,8,linear_batch,15,35,50,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+bannock,Bannock,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+barbeque-hamburger,Barbeque Hamburger,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Cooler; Cutting board; Food thermometer; Grill Or Campfire; Knife,beef; pork,raw_or_perishable_protein
+basic-french-toast,Basic French Toast,planning_estimate,breakfast,camp_meal,8,linear_batch,15,25,40,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+beef-burgundy,Beef Burgundy,planning_estimate,dinner,beef,8,linear_batch,10,25,35,3,medium,good,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,raw_or_perishable_protein
+beef-curry,Beef Curry,planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; One Pot,beef,raw_or_perishable_protein
+beef-goulash,Beef Goulash,planning_estimate,dinner,beef,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; One Pot,beef,raw_or_perishable_protein
+beef-pot-roast,Beef Pot Roast,planning_estimate,dinner,beef,8,linear_batch,10,120,130,3,medium,good,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,raw_or_perishable_protein
+black-forest-cobbler,Black Forest Cobbler,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,3,medium,good,Cutting board; Dutch oven; Knife,varies/unknown,
+blonde-brownies,Blonde Brownies,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+bow-tie-soup,Bow Tie Soup,planning_estimate,dinner,soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+breakfast-burritos,Breakfast Burritos,planning_estimate,breakfast,breakfast; burrito,8,linear_batch,15,25,40,2,low,excellent,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+breakfast-casserole,Breakfast Casserole,planning_estimate,breakfast,breakfast; casserole,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+breakfast-cornbread,Breakfast Cornbread,planning_estimate,breakfast,breakfast,8,linear_batch,15,35,50,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+breakfast-in-a-bag,Breakfast in a Bag,planning_estimate,breakfast,breakfast,8,per_person,10,25,35,2,low,excellent,Bag Meal; Camp stove; Cutting board; Knife,varies/unknown,
+breakfast-sausage-balls,Breakfast Sausage Balls,planning_estimate,breakfast,breakfast,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork/sausage,raw_or_perishable_protein
+brv-soup,BRV Soup,planning_estimate,dinner,soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+burger-beans-biscuits,"Burger, Beans, & Biscuits",planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,beef,
+burrito-ranchero,Burrito Ranchero,planning_estimate,dinner,burrito,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+burritos,Burritos,planning_estimate,dinner,burrito,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+cajun-gumbo,Cajun Gumbo,planning_estimate,dinner,camp_meal,8,linear_batch,10,45,55,3,medium,good,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+camp-wontons,Camp WonTons,planning_estimate,lunch,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+candied-apples,Candied Apples,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+ccc-casserole,CCC Casserole,planning_estimate,dinner,casserole,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+cheesecake,Cheesecake,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+chicken-and-dumplings,Chicken and Dumplings,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+chicken-cacciateri,Chicken Cacciateri,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,3,medium,good,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+chicken-creole,Chicken Creole,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+chicken-enchilada-pie,Chicken Enchilada Pie,planning_estimate,dessert,chicken,12,linear_batch,15,35,50,2,low,good,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+chicken-foil-dinner,Chicken Foil Dinner,planning_estimate,dinner,chicken; foil_pack,8,linear_batch,10,25,35,2,low,excellent,Campfire; Cooler; Cutting board; Food thermometer; Heavy-duty foil; Knife,chicken,raw_poultry
+chicken-gumbo,Chicken Gumbo,planning_estimate,dinner,chicken,8,linear_batch,10,45,55,3,medium,good,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,chicken,raw_poultry
+chicken-pot-pie,Chicken Pot Pie,planning_estimate,dessert,chicken,12,linear_batch,15,35,50,3,medium,good,Bake; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,chicken,raw_poultry
+chicken-quesadillas,Chicken Quesadillas,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; Serving spoon; Skillet,chicken,raw_poultry
+chicken-stir-fry,Chicken Stir Fry,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; One Pot,chicken,raw_poultry
+chili-casserole,Chili Casserole,planning_estimate,dinner,casserole; chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+chili-chicken-and-dumplings,Chili Chicken and Dumplings,planning_estimate,dinner,chicken; chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,chicken,raw_poultry
+chili-rellano,Chili Rellano,planning_estimate,dinner,chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+chinese-to-go,Chinese To Go,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+chipped-beef-on-toast,Chipped Beef on Toast,planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,raw_or_perishable_protein
+chocolate-chip-cookies,Chocolate Chip Cookies,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+chocolate-upside-down-cake,Chocolate Upside Down Cake,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+chuck-wagon-casserole,Chuck Wagon Casserole,planning_estimate,dinner,casserole,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+citrus-chicken,Citrus Chicken,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+clam-chowder,Clam Chowder,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+club-house-grill-sandwich,Club House Grill Sandwich,planning_estimate,lunch,camp_meal,8,linear_batch,10,10,20,2,low,excellent,Cutting board; Grill Or Campfire; Knife,varies/unknown,
+coffee-can-stew,Coffee Can Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+cola-chicken,Cola Chicken,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+cooked-apples,Cooked Apples,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+corn-dogs,Corn Dogs,planning_estimate,lunch,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Cutting board; Grill Or Campfire; Knife,varies/unknown,
+cornbread,Cornbread,planning_estimate,dinner,camp_meal,8,linear_batch,15,35,50,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+cornmeal-chili,Cornmeal Chili,planning_estimate,dinner,chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+cow-sludge-on-rice,Cow Sludge on Rice,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+cranberry-delight-spread,Cranberry Delight Spread,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+crawfish-cornbread,Crawfish Cornbread,planning_estimate,dinner,fish,8,linear_batch,15,35,50,3,medium,good,Bake; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,fish; shellfish,raw_or_perishable_protein
+creamy-chicken-rice,Creamy Chicken Rice,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; One Pot,chicken,raw_poultry
+creole-beans-and-rice,Creole Beans and Rice,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,beans/legumes,
+cup-cakes,Cup Cakes,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+curry-beef-rice,Curry Beef Rice,planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; One Pot,beef,raw_or_perishable_protein
+dill-potato-wedges,Dill Potato Wedges,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+dutch-kielbasa,Dutch Kielbasa,planning_estimate,dinner,dutch_oven,8,linear_batch,10,25,35,3,medium,good,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+dutch-oven-beef-stew,Dutch Oven Beef Stew,planning_estimate,dinner,beef; dutch_oven; stew,99,per_person,10,45,55,4,high,adult_or_experienced_scout,Charcoal/chimney; Cooking pot; Cooler; Cutting board; Dutch oven; Food thermometer; Knife; Ladle,beef,raw_or_perishable_protein
+dutch-oven-chicken,Dutch Oven Chicken,planning_estimate,dinner,chicken; dutch_oven,8,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,chicken,raw_poultry
+dutch-oven-chicken-breast-dinner,Dutch Oven Chicken Breast Dinner,planning_estimate,dinner,chicken; dutch_oven,8,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,chicken,raw_poultry
+dutch-oven-doughnuts,Dutch Oven Doughnuts,planning_estimate,dinner,dutch_oven,8,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+dutch-oven-fondue-or-fryer,Dutch Oven Fondue or Fryer,planning_estimate,dinner,dutch_oven,8,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+dutch-oven-hot-chili,Dutch Oven Hot Chili,planning_estimate,dinner,chili; dutch_oven,8,linear_batch,10,45,55,4,high,adult_or_experienced_scout,Charcoal/chimney; Cooking pot; Cutting board; Dutch oven; Knife; Ladle,varies/unknown,
+dutch-oven-pineapple-chicken,Dutch Oven Pineapple Chicken,planning_estimate,dessert,chicken; dutch_oven,12,linear_batch,10,40,50,4,high,adult_or_experienced_scout,Charcoal/chimney; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,chicken,raw_poultry
+easy-barbeque-chicken-bits,Easy Barbeque Chicken Bits,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,1,very_low,excellent,Cooler; Cutting board; Food thermometer; Grill Or Campfire; Knife,chicken,raw_poultry
+easy-brisket,Easy Brisket,planning_estimate,dinner,camp_meal,8,linear_batch,10,120,130,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+easy-pie,Easy Pie,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,1,very_low,good,Camp stove; Cutting board; Knife,varies/unknown,
+egg-bake,Egg Bake,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife; Skillet; Spatula,eggs,
+egg-fu-yung,Egg Fu Yung,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,eggs,
+egg-in-a-hole,Egg in a Hole,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,eggs,
+egg-in-an-orange,Egg In an Orange,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,eggs,
+enchiladas,Enchiladas,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+fancy-chicken-breasts,Fancy Chicken Breasts,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+fancy-franks-and-beans,Fancy Franks and Beans,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,beans/legumes,
+fast-teriyaki-flank-steak,Fast Teriyaki Flank Steak,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,
+faux-chicken-cordon-bleu,Faux Chicken Cordon Bleu,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+fish-chowder,Fish Chowder,planning_estimate,dinner,fish,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,fish,raw_or_perishable_protein
+fish-fry,Fish Fry,planning_estimate,dinner,fish,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,fish,raw_or_perishable_protein
+fizzy-fruit-cobbler,Fizzy Fruit Cobbler,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+frank-s-drumsticks,Frank's Drumsticks,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Cutting board; Grill Or Campfire; Grill/fire grate; Knife; Skewers,varies/unknown,
+french-roast-beef,French Roast Beef,planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,raw_or_perishable_protein
+fried-rice,Fried Rice,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+frito-casserole,Frito Casserole,planning_estimate,dinner,casserole,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+garlic-potatoes,Garlic Potatoes,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+girl-scout-stew,Girl Scout Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+good-bars,Good Bars,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+granny-s-french-toast,Granny's French Toast,planning_estimate,breakfast,camp_meal,8,linear_batch,15,25,40,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+ham-bake,Ham Bake,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,pork,
+hamdogs-and-beans,HamDogs and Beans,planning_estimate,lunch,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,pork,
+hashbrown-chicken-casserole,Hashbrown Chicken Casserole,planning_estimate,breakfast,casserole; chicken,8,linear_batch,10,25,35,3,medium,good,Bake; Cooler; Cutting board; Dutch oven; Food thermometer; Knife,chicken,raw_poultry
+hawaiian-chicken,Hawaiian Chicken,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+hawaiian-steak-strips,Hawaiian Steak Strips,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,
+hawaiian-swiss-crescents,Hawaiian Swiss Crescents,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+hearty-potatoes,Hearty Potatoes,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+hobo-dinner,Hobo Dinner,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Campfire; Cutting board; Heavy-duty foil; Knife,varies/unknown,
+hobo-stew,Hobo Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Campfire; Cooking pot; Cutting board; Heavy-duty foil; Knife; Ladle,varies/unknown,
+hoppin-john,Hoppin' John,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,beans/legumes,
+hopping-black-eyed-peas,Hopping Black-eyed Peas,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,beans/legumes,
+hot-and-sweet-sausage,Hot and Sweet Sausage,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork/sausage,raw_or_perishable_protein
+hot-dish,Hot Dish,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+hot-n-spicey-bbq-beef,Hot-n-Spicey BBQ Beef,planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Cooler; Cutting board; Food thermometer; Grill Or Campfire; Knife,beef,raw_or_perishable_protein
+hudson-bay-bread,Hudson Bay Bread,planning_estimate,dinner,camp_meal,8,linear_batch,15,35,50,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+huevos-rancheros,Huevos Rancheros,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+huggies,Huggies,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+hungarian-goulash,Hungarian Goulash,planning_estimate,dinner,camp_meal,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+irish-soda-bread,Irish Soda Bread,planning_estimate,dinner,camp_meal,8,linear_batch,15,35,50,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+jamaican-couscous,Jamaican Couscous,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+jambalaya,Jambalaya,planning_estimate,dinner,camp_meal,8,linear_batch,10,45,55,3,medium,good,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+jellied-french-toast,Jellied French Toast,planning_estimate,breakfast,camp_meal,8,linear_batch,15,25,40,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+jerky,Jerky,planning_estimate,lunch,camp_meal,8,linear_batch,10,120,130,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+kabobs,Kabobs,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Cutting board; Grill Or Campfire; Grill/fire grate; Knife; Skewers,varies/unknown,
+lasagna,Lasagna,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,4,high,adult_or_experienced_scout,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+layered-taco-pie,Layered Taco Pie,planning_estimate,dessert,taco,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+mcpancakes,McPancakes,planning_estimate,breakfast,camp_meal,8,linear_batch,15,35,50,1,very_low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+meat-loaf,Meat Loaf,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+meatball-subs,Meatball Subs,planning_estimate,lunch,camp_meal,8,linear_batch,10,10,20,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+meatballs-in-gravy,Meatballs in Gravy,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+meaty-meat-pie,Meaty-Meat Pie,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+mexican-macaroni,Mexican Macaroni,planning_estimate,dinner,pasta,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+mexican-meatloaf,Mexican Meatloaf,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+mexican-stew,Mexican Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+mini-hash,Mini Hash,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+mint-pork-chops,Mint Pork Chops,planning_estimate,dinner,pork,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork,raw_or_perishable_protein
+mountain-dew-chicken,Mountain Dew Chicken,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+mountain-man-omelette,Mountain Man Omelette,exact_quantities,breakfast,camp_meal,8,linear_batch,15,25,40,3,medium,good,Cutting board; Dutch oven; Knife; Skillet; Spatula,varies/unknown,
+mumbo-jumbo-breakfast,Mumbo Jumbo Breakfast,planning_estimate,breakfast,breakfast,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+mushroom-round-steak,Mushroom Round Steak,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,
+nacho-dip,Nacho Dip,planning_estimate,lunch,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+no-bean-hot-chili,No Bean Hot Chili,planning_estimate,dinner,chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+old-style-green-beans,Old Style Green Beans,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,beans/legumes,
+pasghetti,Pasghetti,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+peach-cobbler,Peach Cobbler,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+peter-s-fish-soup,Peter's Fish Soup,planning_estimate,dinner,fish; soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,fish,raw_or_perishable_protein
+pie-iron-pizzas,Pie Iron Pizzas,planning_estimate,dessert,pie_iron; pizza,12,linear_batch,15,35,50,2,low,good,Campfire; Cutting board; Knife; Pie iron,varies/unknown,
+pig-on-a-stick,Pig On a Stick,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Cutting board; Grill Or Campfire; Grill/fire grate; Knife; Skewers,varies/unknown,
+pineapple-upside-down-cake,Pineapple Upside Down Cake,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+pizza-casserole,Pizza Casserole,planning_estimate,dinner,casserole; pizza,8,linear_batch,10,25,35,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+pom-pom-french-toast,Pom-Pom French Toast,planning_estimate,breakfast,camp_meal,8,linear_batch,15,25,40,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+pork-chops-and-potatoes,Pork Chops and Potatoes,planning_estimate,dinner,pork,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork,raw_or_perishable_protein
+pork-chops-and-veggies,Pork Chops and Veggies,planning_estimate,breakfast,pork,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife; Skillet; Spatula,pork; eggs,raw_or_perishable_protein
+potato-cheese-soup,Potato Cheese Soup,planning_estimate,dinner,soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+raisin-bread-pudding,Raisin Bread Pudding,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+real-chicken-soup,Real Chicken Soup,planning_estimate,dinner,chicken; soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,chicken,raw_poultry
+s-more-pie,S'more Pie,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+salmon-in-foil-pack,Salmon in Foil Pack,planning_estimate,dinner,fish; foil_pack,8,linear_batch,10,25,35,2,low,excellent,Campfire; Cooler; Cutting board; Food thermometer; Heavy-duty foil; Knife,fish,raw_or_perishable_protein
+sausage-creole,Sausage Creole,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork/sausage,raw_or_perishable_protein
+scramble,Scramble,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
+shepherd-pie,Shepherd Pie,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+short-corn,Short Corn,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+simple-chicken-alfredo,Simple Chicken Alfredo,planning_estimate,dinner,chicken,8,linear_batch,10,25,35,1,very_low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,chicken,raw_poultry
+simple-chili,Simple Chili,planning_estimate,dinner,chili,8,linear_batch,10,45,55,1,very_low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+simple-dutch-oven-pizzas,Simple Dutch Oven Pizzas,planning_estimate,dinner,dutch_oven; pizza,8,linear_batch,10,40,50,3,medium,good,Charcoal/chimney; Cutting board; Dutch oven; Knife,varies/unknown,
+simply-salmon,Simply Salmon,planning_estimate,dinner,fish,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,fish,raw_or_perishable_protein
+soda-pineapple-beans,Soda Pineapple Beans,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,beans/legumes,
+sonic-s-chili-dogs,Sonic's Chili Dogs,planning_estimate,lunch,chili,8,linear_batch,10,45,55,1,very_low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,varies/unknown,
+spaghetti-1-pot,Spaghetti 1-Pot,planning_estimate,dinner,pasta,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+spiced-rhubarb,Spiced Rhubarb,planning_estimate,dessert,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+spicy-cornbread,Spicy Cornbread,planning_estimate,dinner,camp_meal,8,linear_batch,15,35,50,3,medium,good,Bake; Cutting board; Dutch oven; Knife,varies/unknown,
+split-pea-soup,Split Pea Soup,planning_estimate,dinner,soup,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot,beans/legumes,
+spud-egg,Spud - egg,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Skillet; Spatula,eggs,
+stroganoff,Stroganoff,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+stromboli,Stromboli,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+sugar-cookies,Sugar Cookies,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+sunrise-cake,Sunrise Cake,planning_estimate,breakfast,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+super-chocolate-brownie,Super Chocolate Brownie,planning_estimate,dessert,camp_meal,12,linear_batch,15,35,50,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+super-easy-spaghetti,Super Easy Spaghetti,planning_estimate,dinner,pasta,8,linear_batch,10,25,35,1,very_low,excellent,Camp stove; Cutting board; Knife; One Pot,varies/unknown,
+swiss-steak,Swiss Steak,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,
+taco-soup,Taco Soup,planning_estimate,dinner,soup; taco,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cutting board; Knife; Ladle; One Pot; Serving spoon; Skillet,varies/unknown,
+taco-tots,Taco Tots,planning_estimate,dinner,taco,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife; Serving spoon; Skillet,varies/unknown,
+ticks-on-a-toilet-seat,Ticks On A Toilet Seat,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+trail-beef-potatos-and-gravy,"Trail Beef, Potatos, and Gravy",planning_estimate,dinner,beef,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,beef,raw_or_perishable_protein
+tri-tip-teriyaki,Tri Tip Teriyaki,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+tuna-tortillas,Tuna Tortillas,planning_estimate,lunch,camp_meal,8,linear_batch,10,10,20,2,low,excellent,Camp stove; Cutting board; Knife,fish,
+venison-stew,Venison Stew,planning_estimate,dinner,stew,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,venison,
+wake-em-up,Wake Em Up,planning_estimate,breakfast,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+white-chicken-chili,White Chicken Chili,planning_estimate,dinner,chicken; chili,8,linear_batch,10,45,55,2,low,excellent,Camp stove; Cooking pot; Cooler; Cutting board; Food thermometer; Knife; Ladle; One Pot,chicken,raw_poultry
+witches-brew,Witches Brew,planning_estimate,dinner,camp_meal,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cutting board; Knife,varies/unknown,
+wormy-apples,Wormy Apples,planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+yams-apples-potatoes,"Yams, Apples, Potatoes",planning_estimate,dessert,camp_meal,12,linear_batch,10,25,35,2,low,good,Camp stove; Cutting board; Knife,varies/unknown,
+zingy-pork-chops,Zingy Pork Chops,planning_estimate,dinner,pork,8,linear_batch,10,25,35,2,low,excellent,Camp stove; Cooler; Cutting board; Food thermometer; Knife,pork,raw_or_perishable_protein
+zip-loc-omelette,Zip-loc Omelette,planning_estimate,breakfast,camp_meal,1,linear_batch,15,25,40,2,low,excellent,Bag Meal; Camp stove; Cutting board; Knife; Skillet; Spatula,varies/unknown,
