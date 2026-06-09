@@ -1,841 +1,646 @@
-// Step-by-step cooking instructions for scout camp recipes.
-// Equipment assumed: portable gas grill, gas pizza oven, Dutch ovens.
-// Each entry: { equipment, steps[], done_when, safety }
-
+// Cooking instructions — equipment: portable gas grill, gas pizza oven, Dutch ovens.
+// One method per recipe. Additional files extend this object.
 window.COOKING_INSTRUCTIONS = {
 
-  // ════════════════════════════════════════════════════════════════════
-  // BREAKFASTS
-  // ════════════════════════════════════════════════════════════════════
+  // BREAKFASTS ──────────────────────────────────────────────────────────────────
 
   "breakfast-burritos": {
-    equipment: "Gas grill — skillet or grill grate",
+    equipment: "Gas grill — large skillet on grate",
     steps: [
-      "Set gas grill to medium heat. Place a large skillet or cast-iron pan on the grate.",
-      "Add sausage to the skillet. Break it apart with a spatula and cook 5–7 min until no pink remains. Push to one side.",
-      "Crack eggs into the skillet next to the sausage. Scramble them together with the meat until fully cooked, about 3 min.",
-      "Slide skillet to low heat. Lay tortillas directly on the grill grate for 30 sec per side to warm — watch for char.",
-      "Scoop the egg and sausage mixture onto each tortilla. Top with shredded cheese and a spoonful of salsa.",
-      "Roll the tortilla tightly: fold in the sides, then roll from the bottom up. Serve immediately."
+      "Set grill to medium. Place skillet on grate and let it heat 2 min.",
+      "Add sausage, break apart, cook 6–7 min until no pink. Drain fat.",
+      "Crack eggs over the sausage. Scramble together 3 min until fully set.",
+      "Warm tortillas directly on the grate 30 sec per side — they should flex, not crisp.",
+      "Spoon filling onto each tortilla, top with cheese and salsa, roll up tightly and serve."
     ],
-    done_when: "Eggs are fully set (no runny parts), sausage is no longer pink.",
-    safety: "Raw eggs — wash hands after cracking. Keep skillet handle away from flame."
+    done_when: "Eggs fully set, no runny parts. Sausage has no pink.",
+    safety: "Wash hands after handling raw eggs and raw sausage."
   },
-
   "simple-breakfast-burritos": {
     equipment: "Gas grill — skillet",
     steps: [
-      "Set gas grill to medium heat, place skillet on grate.",
-      "Cook sausage 5–7 min, breaking apart until no pink. Drain excess fat.",
-      "Crack eggs over the sausage and scramble together until fully cooked, about 3 min.",
-      "Warm tortillas on the grill grate 30 sec per side.",
-      "Spoon filling onto tortilla, top with cheese, roll up, and serve."
+      "Set grill to medium. Heat skillet on grate.",
+      "Cook sausage 6–7 min, breaking apart. Drain fat.",
+      "Crack eggs over sausage, scramble together until fully cooked, about 3 min.",
+      "Warm tortillas on grate 30 sec per side.",
+      "Fill, top with cheese, roll, and serve."
     ],
-    done_when: "Eggs fully set, sausage no longer pink.",
-    safety: "Wash hands after handling raw eggs and raw sausage."
+    done_when: "Eggs set, sausage no pink.",
+    safety: "Wash hands after raw eggs and raw meat."
   },
-
   "pecs-breakfast": {
-    equipment: "Gas grill — large skillet or cast iron",
+    equipment: "Gas grill — large cast-iron skillet",
     steps: [
-      "Set gas grill to medium-high. Place large skillet on grate.",
-      "Cook sausage 5–7 min breaking apart until browned. Remove and set aside.",
-      "Add frozen hashbrowns to the skillet. Press flat. Cook 5 min without stirring — let them brown on the bottom.",
+      "Set grill to medium-high. Heat skillet 3 min.",
+      "Cook sausage, breaking apart, 6–7 min until browned. Remove and leave drippings.",
+      "Add frozen hashbrowns in a flat layer. Press down. Cook 5 min without stirring.",
       "Flip hashbrowns in sections, cook 4 more min until golden and crispy.",
-      "Push hashbrowns to the edges. Return sausage to the center.",
-      "Crack eggs over the mixture, scramble everything together until eggs are fully set, about 3 min.",
-      "Top with shredded cheese, cover skillet with foil or a lid for 1 min to melt. Season with salt and pepper."
+      "Return sausage to the center. Crack eggs over everything and scramble until set, about 3 min.",
+      "Top with cheese, cover with foil 1 min to melt. Salt and pepper to taste."
     ],
-    done_when: "Eggs fully cooked, hashbrowns golden and crispy.",
-    safety: "Skillet gets very hot — use heat-resistant gloves when moving it."
+    done_when: "Hashbrowns golden, eggs fully set.",
+    safety: "Cast iron gets very hot — use heat gloves when moving the skillet."
   },
-
   "breakfast-in-a-bag": {
-    equipment: "Gas grill — one large pot of boiling water",
+    equipment: "Gas grill — large pot of boiling water",
     steps: [
-      "Fill a large pot with water and bring to a boil on the gas grill.",
-      "Each scout: crack 2 eggs into a quart-size zip-lock freezer bag.",
-      "Add crumbled cooked sausage and frozen hashbrowns to each bag.",
-      "Squeeze out excess air and seal the bag tightly.",
-      "Lower all bags into the boiling water. Make sure they float freely.",
-      "Boil 12–15 min until eggs are fully set — squeeze the bag gently to check.",
-      "Lift bags out with tongs. Open carefully (hot steam). Eat right out of the bag with a fork.",
-      "Trash goes in the bag — zip it up and done. No dishes."
+      "Bring a large pot of water to a boil on the grill.",
+      "Each scout cracks 2 eggs into a quart-size FREEZER zip-lock bag (must be freezer grade — regular bags melt).",
+      "Add crumbled cooked sausage and a handful of frozen hashbrowns to each bag.",
+      "Squeeze out air, seal tight. Lower all bags into the boiling water with tongs.",
+      "Boil 13–15 min. Gently squeeze a bag — if the center feels firm, it's done.",
+      "Lift out with tongs. Snip a corner open carefully — steam escapes first. Eat from the bag."
     ],
-    done_when: "Eggs are fully set and no longer jiggly inside the bag.",
-    safety: "Boiling water burns — use tongs to put bags in and take them out. Never use regular zip-lock bags — must be freezer grade."
+    done_when: "Eggs are firm all the way through when squeezed.",
+    safety: "Use FREEZER bags only — regular bags melt. Use tongs in and out. Steam burns."
   },
-
   "pancakes": {
-    equipment: "Gas grill — large skillet or flat griddle",
+    equipment: "Gas grill — flat griddle or large skillet",
     steps: [
-      "Set gas grill to medium. Place skillet or griddle on grate and let it heat 3–4 min.",
-      "In a bowl, mix pancake mix and water per box instructions. Don't over-mix — lumps are fine.",
-      "Add a small pat of butter to the skillet and let it melt and spread.",
-      "Pour about 1/4 cup batter per pancake. Cook until bubbles form on top and the edges look dry — about 2 min.",
-      "Flip once and cook 1–2 more min until golden brown on the bottom.",
-      "Repeat in batches. Keep finished pancakes warm on a plate tented with foil.",
-      "Serve with butter and syrup."
+      "Set grill to medium. Place griddle on grate, heat 3–4 min.",
+      "Mix pancake batter with water per box. Lumps are fine — don't overmix.",
+      "Melt a pat of butter on the griddle. Pour 1/4 cup batter per pancake.",
+      "Cook until bubbles form on top and edges look dry, about 2 min. Flip once.",
+      "Cook 1–2 more min until golden on the bottom. Don't flip again.",
+      "Keep finished pancakes warm tented under foil. Serve with syrup."
     ],
-    done_when: "Both sides are golden brown. No raw batter should ooze out when pressed.",
-    safety: "Batter splatters — keep handle pointing inward. Don't flip more than once or they get tough."
+    done_when: "Both sides golden, no raw batter oozes when pressed.",
+    safety: "Don't press down on pancakes with a spatula — it makes them dense."
   },
-
   "mcpancakes": {
+    equipment: "Gas grill — grates for sausage, skillet for pancakes",
+    steps: [
+      "Set grill to medium. Lay sausage links directly on grates. Turn every 2 min for 8–10 min until browned all over.",
+      "While sausage cooks, mix pancake batter per box.",
+      "Melt butter in skillet on grate. Pour 1/4 cup batter per pancake. Cook 2 min until bubbles form, flip once, 1–2 more min.",
+      "Serve 2–3 pancakes per scout with syrup and 2 sausage links."
+    ],
+    done_when: "Sausage links reach 160°F, no pink inside. Pancakes golden both sides.",
+    safety: "Sausage fat drips on the grate — keep lid nearby in case of flare-up."
+  },
+  "scramble": {
     equipment: "Gas grill — large skillet",
     steps: [
-      "Cook sausage links on gas grill grate over medium heat, turning every 2 min for 8–10 min until browned all over. Keep warm.",
-      "Make pancake batter: mix with water per box, don't over-mix.",
-      "Melt butter in skillet over medium heat. Pour 1/4 cup batter per pancake.",
-      "Cook until bubbles form on surface and edges look set — about 2 min. Flip once, cook 1–2 more min.",
-      "Serve 2–3 pancakes with syrup and 2 sausage links per scout."
+      "Set grill to medium. Heat skillet on grate.",
+      "Cook sausage, breaking apart, 6–7 min until browned. Drain most fat.",
+      "Add diced pepper and onion, cook 3 min until soft.",
+      "Beat eggs with a fork in a bowl. Pour over the skillet mixture.",
+      "Let sit 30 sec, then push from edges to center slowly with a spatula.",
+      "Remove from heat when eggs are just set but still moist — they finish cooking from the pan's heat.",
+      "Sprinkle cheese on top, cover with foil 1 min to melt."
     ],
-    done_when: "Pancakes golden both sides, sausage links reach 160°F internal temp.",
-    safety: "Sausage must be fully cooked — no pink inside."
+    done_when: "Eggs set but moist — not browned, not runny.",
+    safety: "Eggs must be fully cooked. Wash hands after cracking."
   },
-
-  "scramble": {
-    equipment: "Gas grill — large skillet or Dutch oven",
-    steps: [
-      "Set gas grill to medium. Heat skillet on grate.",
-      "Cook sausage 5–7 min, breaking apart until browned. Drain excess fat.",
-      "Add diced bell pepper and onion. Cook 3–4 min until softened.",
-      "Crack all eggs into a bowl and beat with a fork. Pour over the skillet mixture.",
-      "Let eggs sit 30 sec, then gently push from edges to center with a spatula — keep moving slowly.",
-      "When eggs are almost set (still a little shiny), remove from heat — they finish cooking from the heat in the pan.",
-      "Sprinkle cheese over the top, cover with a lid or foil for 1 min to melt. Season with salt and pepper."
-    ],
-    done_when: "Eggs are set but still moist — not browned or dry.",
-    safety: "Eggs must be fully cooked with no runny parts. Wash hands after handling raw eggs."
-  },
-
   "armadillo-eggs": {
-    equipment: "Gas grill — skillet or flat griddle",
+    equipment: "Gas grill — directly on grates",
     steps: [
-      "Hard-boil eggs first: place in pot of cold water on gas grill, bring to boil, cook 10 min. Remove and cool in cold water. Peel.",
-      "While eggs cool, slice jalapeños in half lengthwise and scoop out seeds (use gloves if available).",
-      "Flatten a handful of raw sausage in your palm. Place a peeled egg in the center.",
-      "Wrap the sausage completely around the egg, sealing all gaps.",
-      "Place sausage-wrapped eggs on gas grill over medium heat.",
-      "Cook 10–12 min, turning every 2–3 min, until sausage is golden brown on all sides and fully cooked.",
-      "Optional: top with shredded cheese for last minute and cover to melt."
+      "Hard-boil eggs: place in pot of cold water on grill, bring to boil, cook 10 min. Cool in cold water, peel.",
+      "Flatten a handful of raw breakfast sausage in your palm into a flat round.",
+      "Place one peeled egg in the center. Wrap the sausage around it completely and seal all gaps.",
+      "Place wrapped eggs on grill grate over medium heat.",
+      "Cook 10–12 min, turning every 2–3 min, until sausage is golden brown all over.",
+      "Top with shredded cheese in the last minute and tent with foil to melt."
     ],
-    done_when: "Sausage coating is golden brown all over with no pink. Internal temp 165°F.",
-    safety: "Wash hands thoroughly after handling raw sausage. Use gloves when handling jalapeños — the juice burns eyes."
+    done_when: "Sausage golden brown all over, no pink, internal temp 165°F.",
+    safety: "Wash hands well after forming raw sausage. Jalapeño juice burns eyes — don't touch your face."
   },
-
   "breakfast-casserole": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat 12-inch Dutch oven on gas grill over medium heat.",
-      "Cook sausage in Dutch oven, breaking apart, 5–7 min until browned. Drain most of the fat.",
-      "Spread frozen hashbrowns over the sausage in an even layer. Don't stir.",
-      "In a bowl, beat eggs with milk, salt, and pepper. Pour the egg mixture evenly over the hashbrowns.",
-      "Sprinkle shredded cheese over the top.",
-      "Cover the Dutch oven with the lid. Cook over medium-low heat 20–25 min.",
-      "Done when the center is set — gently shake the pot. If it doesn't jiggle, it's done.",
-      "Let rest 5 min before scooping out."
+      "Heat Dutch oven on grill over medium. Cook sausage 6–7 min, breaking apart. Drain fat.",
+      "Spread frozen hashbrowns in an even layer over the sausage. Don't stir.",
+      "Beat eggs with milk, salt, and pepper. Pour evenly over the hashbrowns.",
+      "Sprinkle cheese over the top. Cover with lid.",
+      "Reduce grill to medium-low. Cook 22–25 min — don't lift the lid.",
+      "Shake the pot gently. If it doesn't jiggle, it's done. Let rest 5 min before scooping."
     ],
-    done_when: "Eggs are fully set in the center, cheese is melted, edges are lightly golden.",
-    safety: "Dutch oven lid and pot will be extremely hot — always use heat gloves."
+    done_when: "Center fully set (no jiggle), cheese melted, edges lightly golden.",
+    safety: "Dutch oven lid is extremely hot — always use heat gloves."
   },
-
   "mountain-man-omelette": {
     equipment: "Dutch oven — 14-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Cook sausage in Dutch oven until browned, breaking apart. Remove and set aside.",
-      "Add a little oil to the pot. Spread frozen hashbrowns in an even layer. Cook 5 min until starting to brown on the bottom.",
-      "Add diced peppers and onion over the hashbrowns. Stir gently, cook 3 more min.",
+      "Heat Dutch oven on grill over medium-high. Cook sausage until browned, breaking apart. Remove.",
+      "Add oil, spread hashbrowns in an even layer. Cook 5 min until the bottom starts to brown.",
+      "Add diced peppers and onion over the top. Cook 3 more min.",
       "Return sausage to the pot and spread everything evenly.",
-      "Beat eggs with milk in a bowl, pour evenly over the entire mixture.",
-      "Sprinkle cheese on top. Cover the Dutch oven with the lid.",
-      "Cook 15–20 min on medium-low until eggs are set in the center.",
-      "Done when center doesn't jiggle. Let rest 5 min before scooping."
+      "Beat eggs with milk, pour evenly over the mixture. Sprinkle cheese on top.",
+      "Cover and reduce to medium-low. Cook 15–20 min until eggs are set.",
+      "Test by pressing the center — it should feel firm, not liquid. Let rest 5 min."
     ],
-    done_when: "Eggs fully set throughout, no runny liquid when pressed with spoon.",
-    safety: "Feeds the whole patrol at once — make sure ALL eggs are fully cooked. Internal temp should reach 160°F."
+    done_when: "Eggs fully set throughout, no runny liquid.",
+    safety: "This feeds the whole patrol — confirm every section of eggs is cooked before serving."
+  },
+  "egg-bake": {
+    equipment: "Dutch oven — 12-inch, on gas grill",
+    steps: [
+      "Heat Dutch oven on grill over medium. Cook sausage until browned. Drain fat.",
+      "Beat eggs with milk, salt, and pepper. Pour over sausage.",
+      "Sprinkle cheese over the top. Cover with lid.",
+      "Cook on medium-low 18–22 min until eggs are set.",
+      "Shake gently — no jiggle means done. Scoop into portions."
+    ],
+    done_when: "Eggs fully set, cheese melted, no liquid when pressed.",
+    safety: "Eggs must reach 160°F. The center takes longer than the edges — always check it."
   },
 
-  // ════════════════════════════════════════════════════════════════════
-  // LUNCHES
-  // ════════════════════════════════════════════════════════════════════
+  // LUNCHES ─────────────────────────────────────────────────────────────────────
 
   "taco-in-a-bag": {
     equipment: "Gas grill — small skillet",
     steps: [
-      "Cook ground beef in skillet on gas grill over medium-high heat. Break apart with spatula.",
-      "Cook 7–8 min until beef is browned and no pink remains. Drain excess fat.",
-      "Add taco seasoning packet and 1/4 cup water per pound of beef. Stir and simmer 2 min.",
-      "Open each Fritos bag: tear the bag open down the center (or cut across the top and fold down).",
-      "Spoon 3–4 Tbsp seasoned beef into each bag directly on the chips.",
-      "Top with drained beans, shredded cheese, sour cream, and salsa.",
-      "Hand each scout a fork and they eat right out of the bag. Fold up the bag and it's trash — zero dishes."
+      "Cook ground beef in skillet on grill over medium-high, breaking apart, 7–8 min until no pink. Drain fat.",
+      "Add taco seasoning and 1/4 cup water. Stir and simmer 2 min.",
+      "Open each Fritos bag and tear or cut across the top, fold the sides down.",
+      "Spoon 3–4 Tbsp seasoned beef into each bag on top of the chips.",
+      "Top with beans, cheese, sour cream, and salsa. Eat from the bag with a fork."
     ],
-    done_when: "Beef is fully browned with no pink. Seasoning is mixed in.",
-    safety: "Ground beef must be fully cooked to 160°F. Drain fat carefully — it's hot."
+    done_when: "Beef fully browned, no pink.",
+    safety: "Ground beef must reach 160°F. Drain fat carefully — it's hot."
   },
-
   "a-w-chili-dogs": {
-    equipment: "Gas grill — grates for hot dogs, small pot for chili",
+    equipment: "Gas grill — grates and small pot",
     steps: [
-      "Pour canned chili into a small pot. Place on gas grill over low heat to warm through, stirring occasionally.",
-      "Place hot dogs directly on gas grill grates over medium heat.",
-      "Grill 5–7 min, turning a quarter-turn every 2 min until grill marks show on all sides.",
-      "Place buns face-down on the grill for 60 sec to lightly toast.",
-      "Put each hot dog in a bun. Spoon warm chili over the top.",
-      "Top with shredded cheddar. Serve with mustard on the side."
+      "Pour canned chili into a small pot on grill over low heat. Stir occasionally until hot.",
+      "Lay hot dogs on grates over medium heat. Turn every 2 min for 6–7 min.",
+      "Toast bun halves face-down on grate for 60 sec.",
+      "Put dog in bun, spoon warm chili over top. Top with shredded cheddar."
     ],
-    done_when: "Hot dogs have clear grill marks and are fully heated. Chili is steaming hot.",
-    safety: "Hot dogs are already cooked — just need to be heated through. Don't let them burst."
+    done_when: "Hot dogs heated through with grill marks. Chili is steaming.",
+    safety: "Don't let chili scorch — stir it."
   },
-
   "sonic-s-chili-dogs": {
-    equipment: "Gas grill — grates for dogs, small pot for chili",
+    equipment: "Gas grill — grates and small pot",
     steps: [
-      "Warm canned chili in pot on gas grill low heat, stir occasionally.",
-      "Grill hot dogs on gas grill grates over medium, turning every 2 min for 5–7 min.",
-      "Toast buns face-down on grill 60 sec.",
-      "Dice a small amount of raw onion and set aside.",
-      "Assemble: hot dog in bun, chili on top, diced onion, shredded cheese, mustard."
+      "Warm canned chili in a pot on grill over low heat.",
+      "Grill hot dogs on grates over medium, turning every 2 min for 6–7 min.",
+      "Toast buns face-down on grate 60 sec.",
+      "Assemble: dog in bun, chili, diced onion, shredded cheese, mustard."
     ],
-    done_when: "Hot dogs heated through with grill marks all around.",
-    safety: "Keep chili stirred so it doesn't scorch on the bottom."
+    done_when: "Hot dogs heated with grill marks.",
+    safety: "Stir chili so it doesn't scorch."
   },
-
   "corn-dogs": {
     equipment: "Gas grill — grates",
     steps: [
-      "Remove corn dogs from packaging. If frozen, they can go straight on the grill.",
-      "Set gas grill to medium. Place corn dogs on grates.",
-      "Turn every 2–3 min for 10–12 min total until the cornbread coating is golden brown.",
+      "Set grill to medium. Place frozen corn dogs directly on grates.",
+      "Turn every 2–3 min for 10–12 min total until coating is golden brown all over.",
       "Serve with ketchup and mustard."
     ],
-    done_when: "Coating is golden brown all over. Internal temp 165°F.",
-    safety: "Frozen corn dogs take longer than thawed. Check the center is hot before serving."
+    done_when: "Coating golden brown all over, internal temp 165°F.",
+    safety: "Frozen corn dogs take longer — check the center is hot before serving."
   },
-
   "tuna-tortillas": {
-    equipment: "No heat needed (or gas grill to warm tortillas)",
+    equipment: "No cooking needed",
     steps: [
-      "Open and drain canned tuna. Put in a bowl.",
-      "Mix tuna with mayonnaise and sweet relish until combined.",
-      "Optional: warm tortillas on gas grill grate 30 sec per side.",
-      "Spread tuna mix down the center of each tortilla.",
-      "Add shredded lettuce or cabbage on top.",
-      "Roll up tightly and serve."
+      "Drain canned tuna and break apart in a bowl.",
+      "Mix with mayonnaise and sweet relish until combined.",
+      "Lay tortilla flat. Spread tuna down the center. Top with shredded lettuce.",
+      "Roll tightly and serve."
     ],
-    done_when: "Ready immediately — this is a no-cook meal.",
-    safety: "Keep tuna cold until ready to use. Don't leave mayo-based mix sitting in the sun."
+    done_when: "Ready immediately.",
+    safety: "Keep mayo-based mix cold. Don't leave it sitting in the sun."
   },
-
   "meatball-subs": {
-    equipment: "Dutch oven or pot on gas grill",
+    equipment: "Dutch oven — on gas grill",
     steps: [
-      "Pour marinara sauce into Dutch oven on gas grill over medium heat. Let it warm 5 min.",
-      "Add frozen meatballs to the sauce. Stir to coat.",
-      "Cover and cook 15–20 min until meatballs are heated through (internal temp 165°F), stirring every 5 min.",
-      "Meanwhile, split sub rolls and place face-down on gas grill for 90 sec to toast.",
-      "Use tongs to place 5 meatballs in each roll. Spoon extra sauce over top.",
-      "Top with shredded mozzarella. Wrap in foil for 2 min to melt cheese."
+      "Pour marinara into Dutch oven on grill over medium. Warm 5 min.",
+      "Add frozen meatballs. Stir to coat. Cover and cook 15–20 min, stirring every 5 min, until meatballs reach 165°F.",
+      "Split sub rolls and toast face-down on grate 90 sec.",
+      "Place 5 meatballs per roll, spoon sauce over, top with mozzarella.",
+      "Wrap in foil 2 min to melt cheese."
     ],
-    done_when: "Meatballs are steaming hot throughout and reach 165°F.",
-    safety: "Sauce splatters when it boils — keep lid on and stir carefully."
+    done_when: "Meatballs steaming hot throughout, 165°F.",
+    safety: "Sauce splatters at a boil — keep lid on and stir carefully."
   },
 
-  // ════════════════════════════════════════════════════════════════════
-  // DINNERS
-  // ════════════════════════════════════════════════════════════════════
+  // DINNERS ─────────────────────────────────────────────────────────────────────
 
   "chili-mac": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Add ground beef and diced onion. Cook 7–8 min, breaking apart, until beef is browned. Drain excess fat.",
-      "Add both cans of Ro-Tel (undrained) and 1 cup of water. Stir and bring to a boil.",
-      "Add dry elbow macaroni. Stir well so pasta is covered in liquid.",
-      "Reduce heat to medium-low. Cover with lid and cook 10–12 min, stirring every 3–4 min.",
-      "When macaroni is tender and most liquid is absorbed, remove from heat.",
-      "Top with shredded cheddar, replace lid for 2 min to melt. Serve."
+      "Heat Dutch oven on grill over medium-high. Cook ground beef and diced onion 7–8 min, breaking apart. Drain fat.",
+      "Add both cans of Ro-Tel (undrained) and 1 cup water. Stir and bring to a boil.",
+      "Add dry elbow macaroni. Stir so pasta is submerged.",
+      "Reduce to medium-low, cover, cook 10–12 min, stirring every 3–4 min.",
+      "When pasta is tender and liquid mostly absorbed, remove from heat. Top with cheese, cover 2 min to melt."
     ],
-    done_when: "Macaroni is tender (taste one), liquid is mostly absorbed, cheese is melted.",
-    safety: "Dutch oven stays extremely hot after removing from heat — use gloves. Don't let it boil dry."
+    done_when: "Pasta tender, liquid mostly absorbed, cheese melted.",
+    safety: "Stir regularly — pasta scorches on the bottom fast."
   },
-
   "cowboy-stew": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Add ground beef, season with chili powder, garlic powder, salt, and pepper. Cook 7–8 min until browned. Drain fat.",
-      "Add diced potatoes. Stir with the beef and cook 3 min.",
-      "Pour in beef broth, diced tomatoes, beans, and corn. Stir to combine.",
-      "Bring to a boil, then reduce gas grill to medium-low.",
-      "Cover with lid and simmer 20–25 min until potatoes are fork-tender.",
-      "Taste and adjust salt and pepper before serving."
+      "Heat Dutch oven on grill over medium-high. Brown ground beef with chili powder, garlic powder, salt, and pepper, 7–8 min. Drain fat.",
+      "Add diced potatoes, stir 3 min.",
+      "Add beef broth, diced tomatoes, beans, and corn. Stir and bring to a boil.",
+      "Reduce to medium-low, cover, simmer 20–25 min until potatoes are fork-tender.",
+      "Taste, adjust salt and pepper."
     ],
-    done_when: "Potatoes are soft when poked with a fork. Stew has thickened slightly.",
-    safety: "Be careful lifting the lid — steam burns. Tilt the lid away from you."
+    done_when: "Potatoes soft when poked with a fork.",
+    safety: "Tilt the lid away from you when lifting — steam burns."
   },
-
   "train-wreck": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Brown ground beef, season with garlic powder, salt, and pepper. Cook 7–8 min until no pink. Drain fat.",
+      "Heat Dutch oven on grill over medium-high. Brown ground beef, season with salt, pepper, garlic powder. Drain fat.",
       "Add diced tomatoes and beef broth. Stir and bring to a boil.",
-      "Add dry elbow macaroni. Stir so it's submerged in liquid.",
-      "Reduce heat to medium-low. Cover and cook 10–12 min, stirring every 3–4 min, until pasta is tender.",
-      "If it looks dry, add a splash more broth. Stir in shredded cheese until melted.",
-      "Serve immediately."
+      "Add dry elbow macaroni, stir to submerge. Reduce to medium-low.",
+      "Cover and cook 10–12 min, stirring every 3 min, until pasta is tender.",
+      "Stir in shredded cheese until melted. Serve immediately."
     ],
-    done_when: "Pasta is tender, cheese is melted, liquid is mostly absorbed.",
-    safety: "Pasta soaks up liquid fast — don't let the bottom scorch. Stir regularly."
+    done_when: "Pasta tender, cheese melted, liquid mostly gone.",
+    safety: "Pasta soaks up liquid fast — add a splash of broth if it looks dry."
   },
-
   "simple-chili": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Cook ground beef with diced onion 7–8 min until browned, breaking apart. Drain fat.",
-      "Add kidney beans, diced tomatoes, tomato sauce, and chili seasoning packet. Stir well.",
-      "Bring to a boil, then reduce heat to medium-low.",
-      "Simmer uncovered 15–20 min, stirring occasionally, until thickened.",
-      "Taste and adjust seasoning. Serve topped with shredded cheese."
+      "Heat Dutch oven on grill over medium-high. Cook ground beef and diced onion 7–8 min. Drain fat.",
+      "Add kidney beans, diced tomatoes, tomato sauce, and chili seasoning packet. Stir.",
+      "Bring to a boil, reduce to medium-low. Simmer uncovered 15–20 min, stirring occasionally.",
+      "Taste, adjust seasoning. Top bowls with shredded cheese."
     ],
-    done_when: "Chili is thick and bubbling, beef fully cooked.",
-    safety: "Chili splatters when it boils — use a long-handled spoon."
+    done_when: "Chili thick and bubbling, beef fully cooked.",
+    safety: "Use a long-handled spoon — chili splatters when it boils."
   },
-
   "taco-soup": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Cook ground beef with diced onion 7–8 min until browned. Drain fat.",
-      "Add taco seasoning and stir to coat the meat.",
-      "Pour in Ro-Tel, kidney beans, corn, and beef broth. Stir everything together.",
-      "Bring to a boil, then reduce heat to medium-low.",
-      "Simmer 15 min, stirring occasionally.",
-      "Serve in cups or bowls. Top each with sour cream, shredded cheese, and crushed tortilla chips."
+      "Heat Dutch oven on grill over medium-high. Cook ground beef and onion 7–8 min. Drain fat.",
+      "Add taco seasoning, stir to coat. Pour in Ro-Tel, beans, corn, and beef broth.",
+      "Bring to a boil, reduce to medium-low. Simmer 15 min, stirring occasionally.",
+      "Serve in bowls topped with sour cream, cheese, and crushed tortilla chips."
     ],
-    done_when: "Soup is bubbling and all ingredients are heated through.",
-    safety: "This makes a large batch — use a big enough Dutch oven so it doesn't overflow."
+    done_when: "All ingredients heated through and soup is bubbling.",
+    safety: "Use a big enough Dutch oven — this makes a large batch."
   },
-
   "spaghetti-1-pot": {
-    equipment: "Dutch oven — 12-inch, on gas grill + separate pot for pasta",
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Fill a large pot with water, add a pinch of salt, bring to a boil on gas grill.",
-      "Meanwhile, heat Dutch oven over medium-high. Brown ground beef 7–8 min. Drain fat.",
-      "Add marinara sauce, garlic powder, and Italian seasoning to the beef. Stir and reduce heat to low.",
-      "Add dry spaghetti to the boiling water. Cook 2 min LESS than the package says (about 7–8 min). It will finish in the sauce.",
-      "Drain pasta in a colander or carefully pour off water.",
-      "Add drained pasta to the Dutch oven with the meat sauce. Toss to coat.",
-      "Simmer everything together 2 min. Serve topped with grated Parmesan."
+      "Heat Dutch oven on grill over medium-high. Brown ground beef 7–8 min. Drain fat.",
+      "Pour in marinara and 2 cups water. Stir and bring to a boil.",
+      "Break dry spaghetti in half, push it under the liquid. Stir well.",
+      "Cover, reduce to medium-low. Cook 10–12 min, stirring every 3 min.",
+      "Serve topped with Parmesan when pasta is tender and sauce is thick."
     ],
-    done_when: "Pasta is tender but has a slight bite. Sauce clings to every noodle.",
-    safety: "Boiling water + pouring = burn risk. Use tongs or a strainer. Designate one person to handle the boiling pot."
+    done_when: "Pasta tender, sauce thick and clinging to noodles.",
+    safety: "Stir often — pasta clumps and burns on the bottom if left alone."
   },
-
   "super-easy-spaghetti": {
-    equipment: "Dutch oven or large pot on gas grill",
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Fill a large pot with salted water and boil on gas grill.",
-      "In Dutch oven, brown ground beef over medium-high 7–8 min. Drain fat.",
-      "Pour marinara sauce over beef. Reduce heat to low and simmer.",
-      "Cook spaghetti in boiling water 1–2 min less than box says. Drain.",
-      "Add pasta to the meat sauce. Toss and serve with Parmesan."
+      "Brown ground beef in Dutch oven over medium-high, 7–8 min. Drain fat.",
+      "Pour in marinara and 2 cups water. Break spaghetti in half into the pot. Stir.",
+      "Cover, reduce to medium-low. Cook 10–12 min, stirring every 3 min.",
+      "Serve with Parmesan."
     ],
-    done_when: "Pasta is tender, sauce is thick and hot.",
-    safety: "Don't leave boiling pasta unattended — it boils over fast on a gas grill set too high."
+    done_when: "Pasta tender, sauce thick.",
+    safety: "Stir every few minutes so pasta doesn't burn on the bottom."
   },
-
   "hobo-dinner": {
-    equipment: "Gas grill — grates",
+    equipment: "Gas grill — foil packet on grates",
     steps: [
-      "Pre-heat gas grill to medium-high (about 400°F).",
-      "Form ground beef into a patty. Season both sides with garlic powder, salt, and pepper.",
-      "Lay a 2-foot section of heavy-duty foil on a flat surface.",
-      "Layer sliced potatoes in the center. Add sliced carrots, diced onion. Place the beef patty on top. Add a pat of butter and season the veggies.",
-      "Fold the foil: bring two sides up and roll them together to seal. Then fold in both ends tightly. Double-fold all edges so no steam escapes.",
-      "Place packets on the grill grate. Close the lid.",
-      "Cook 25–30 min. Flip the packets at the halfway point using tongs.",
-      "Use tongs to move a packet to a plate. Carefully cut open the top — steam will escape. Test a potato with a fork for doneness."
+      "Preheat grill to medium-high.",
+      "Form beef into a patty. Season both sides with garlic powder, salt, and pepper.",
+      "Lay a 2-foot sheet of heavy-duty foil flat. Layer sliced potatoes, then carrots and onion. Place beef patty on top. Add a pat of butter and season the veggies.",
+      "Fold foil: bring two long sides up and roll together to seal. Fold in both ends tightly. Double-fold all edges.",
+      "Place packets on grate. Close the grill lid. Cook 25–30 min, flipping once at the halfway point.",
+      "Move to a plate with tongs. Cut open the top with scissors — steam escapes first. Fork-test a potato."
     ],
-    done_when: "Potatoes are fork-tender, beef reaches 160°F internal temp.",
-    safety: "Opening the packet releases VERY hot steam — cut the foil pointed away from your face. Use tongs. Foil corners are razor sharp when crumpled."
+    done_when: "Potatoes fork-tender, beef reaches 160°F.",
+    safety: "Opening releases VERY hot steam — cut foil pointing away from your face. Also works on a campfire — place packets in hot coals 25 min."
   },
-
   "burger-beans-biscuits": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium-high.",
-      "Cook ground beef with salt, pepper, and garlic powder 7–8 min until browned. Drain excess fat.",
-      "Add baked beans and brown sugar to the meat. Stir to combine.",
-      "Let the mixture simmer 5 min, stirring so the bottom doesn't burn.",
-      "Reduce heat to medium-low. Open biscuit can and place individual biscuits on top of the meat mixture, spacing evenly.",
-      "Cover Dutch oven with lid. Cook 15–18 min without lifting the lid.",
-      "After 15 min, peek — biscuits should be golden on top and cooked through. Test by inserting a toothpick into a biscuit: it should come out clean.",
-      "Scoop into bowls: get at least one biscuit per person plus the meat and bean mixture underneath."
+      "Heat Dutch oven on grill over medium-high. Brown ground beef with salt, pepper, garlic powder. Drain fat.",
+      "Add baked beans and brown sugar. Stir and simmer 5 min.",
+      "Reduce to medium-low. Open biscuit can and place biscuits on top of the meat mixture, spaced apart.",
+      "Cover and cook 15–18 min without lifting the lid.",
+      "Check at 15 min — biscuits should be golden, toothpick in a biscuit should come out clean."
     ],
-    done_when: "Biscuits are golden brown on top, toothpick comes out clean. Beans are bubbling.",
-    safety: "Pressure builds under the lid — lift it away from you and let steam escape first."
+    done_when: "Biscuits golden, toothpick clean, beans bubbling.",
+    safety: "Lift the lid away from you — steam builds underneath."
   },
-
   "burritos": {
-    equipment: "Dutch oven and gas grill — skillet",
+    equipment: "Gas grill — skillet",
     steps: [
-      "Cook ground beef in skillet on gas grill over medium-high, add taco seasoning per packet, stir. Cook 8–10 min until fully browned. Drain fat.",
-      "In a small pot, warm refried beans over low heat on the grill, stirring until smooth and hot.",
-      "Lay tortillas on grill grate 30 sec per side to warm — they should be flexible, not crispy.",
-      "Lay each tortilla flat. Spread a layer of refried beans down the center.",
-      "Add seasoned beef, shredded cheese, salsa, and sour cream.",
-      "Fold in sides, then roll from the bottom up tightly. Serve immediately."
+      "Cook ground beef in skillet on grill over medium-high with taco seasoning per packet, 8–10 min. Drain fat.",
+      "In a small pot on low heat, warm refried beans, stirring until smooth.",
+      "Warm tortillas on grate 30 sec per side until flexible.",
+      "Spread beans down the center of each tortilla, add beef, cheese, salsa, and sour cream.",
+      "Fold in sides, roll from the bottom up tightly, and serve."
     ],
     done_when: "Beef fully cooked, beans hot, tortillas warm and pliable.",
-    safety: "Work fast once the tortillas are warm — they stiffen as they cool and will crack when you roll."
+    safety: "Work fast after warming tortillas — they stiffen and crack as they cool."
   },
-
   "taco-tots": {
-    equipment: "Dutch oven or cast iron on gas grill",
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven or large cast-iron pan on gas grill over medium-high. Add a small amount of oil.",
-      "Add frozen tater tots in a single layer (or as close as possible). Cook 8–10 min, shaking the pan occasionally.",
-      "Flip tots and cook another 8 min until crispy and golden brown.",
-      "Meanwhile, cook seasoned ground beef in a separate skillet. Add taco seasoning and 1/4 cup water, simmer 2 min.",
-      "Scoop tots onto each plate. Top with seasoned beef.",
-      "Add shredded cheese, cover loosely with foil for 2 min to melt.",
-      "Finish with a dollop of sour cream and a spoonful of salsa per serving."
+      "Heat Dutch oven on grill over medium-high with a thin layer of oil.",
+      "Add frozen tater tots in a single layer. Cook 8–10 min, shaking occasionally.",
+      "Flip tots, cook 8 more min until crispy and golden.",
+      "Meanwhile cook seasoned ground beef in a separate skillet. Add seasoning packet and 1/4 cup water, simmer 2 min.",
+      "Scoop tots onto plates. Top with beef, then cheese. Cover loosely with foil 2 min to melt.",
+      "Finish with sour cream and salsa."
     ],
-    done_when: "Tots are golden and crispy (not soft), beef fully cooked.",
-    safety: "Don't overcrowd the Dutch oven — tots need space to crisp up. Overcrowding makes them steam instead of fry."
+    done_when: "Tots golden and crispy (not soft), beef fully cooked.",
+    safety: "Don't overcrowd the Dutch oven — tots need space to crisp, not steam."
   },
-
   "hamdogs-and-beans": {
-    equipment: "Dutch oven on gas grill",
+    equipment: "Dutch oven — on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium.",
-      "Slice hot dogs and dice ham into bite-size pieces. Add to Dutch oven.",
-      "Cook 3–4 min, stirring, until hot dogs and ham are lightly browned.",
+      "Heat Dutch oven on grill over medium.",
+      "Slice hot dogs into rounds, dice ham. Add both and cook 3–4 min until lightly browned.",
       "Pour in baked beans, brown sugar, and mustard. Stir to combine.",
-      "Simmer uncovered 10 min, stirring occasionally, until beans are thick and bubbling.",
-      "Serve in bowls."
+      "Simmer uncovered 10 min, stirring occasionally, until beans are thick and bubbling."
     ],
-    done_when: "Beans are thick and bubbling. Hot dogs are heated through.",
-    safety: "Hot dogs are pre-cooked — just need to be heated. Don't let beans scorch on the bottom."
+    done_when: "Beans thick and bubbling, hot dogs heated through.",
+    safety: "Stir often — beans scorch on the bottom."
   },
-
   "potato-cheese-soup": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium. Cook bacon strips until crispy, about 6–8 min. Remove and crumble. Leave about 1 Tbsp drippings in the pot.",
-      "Add diced onion to the drippings. Cook 3–4 min until softened.",
-      "Add diced potatoes, chicken broth, and garlic powder. Stir. Bring to a boil.",
-      "Reduce heat to medium-low. Cook covered 15 min until potatoes are soft.",
-      "Use the back of a spoon to smash about 1/4 of the potatoes against the side of the pot — this thickens the soup.",
-      "Stir in heavy cream and most of the cheese. Cook 3 min until cheese melts.",
-      "Taste and season with salt and pepper.",
-      "Serve topped with remaining cheese, crumbled bacon, and a spoonful of sour cream."
+      "Heat Dutch oven on grill over medium. Cook bacon until crispy, 6–8 min. Remove and crumble. Leave 1 Tbsp drippings.",
+      "Add diced onion to drippings, cook 3–4 min until soft.",
+      "Add diced potatoes, chicken broth, and garlic powder. Bring to a boil.",
+      "Reduce to medium-low, cover, cook 15 min until potatoes are soft.",
+      "Smash about 1/4 of the potatoes against the side of the pot to thicken.",
+      "Stir in heavy cream and most of the cheese. Cook 3 min until melted.",
+      "Season with salt and pepper. Top bowls with remaining cheese, crumbled bacon, and sour cream."
     ],
-    done_when: "Potatoes are completely soft, soup is creamy and thick.",
-    safety: "Heavy cream can curdle if it boils hard — keep heat low after adding it."
+    done_when: "Potatoes completely soft, soup creamy and thick.",
+    safety: "Add cream over low heat only — high heat makes it curdle."
   },
-
   "dutch-kielbasa": {
-    equipment: "Gas grill (grates for searing) + Dutch oven",
+    equipment: "Gas grill — grates for searing, Dutch oven for finishing",
     steps: [
-      "Slice kielbasa into 1-inch rounds or split each link lengthwise.",
-      "Place kielbasa directly on gas grill grates over medium-high heat. Grill 3–4 min per side until dark grill marks appear. Set aside.",
-      "While kielbasa grills, start potatoes: dice into 1-inch cubes and parboil in Dutch oven with water over gas grill 10 min. Drain.",
-      "Return Dutch oven to medium heat. Add a little oil, sauté diced onion 3 min.",
-      "Add grilled kielbasa, parboiled potatoes, sauerkraut, and garlic powder. Stir together.",
-      "Cover and cook 12–15 min until potatoes are fully tender and everything is heated through.",
-      "Serve with mustard on the side."
+      "Slice kielbasa into 1-inch rounds. Grill directly on grates over medium-high 3–4 min per side until charred. Set aside.",
+      "In Dutch oven on grill over medium, sauté diced onion in oil 3 min.",
+      "Add parboiled diced potatoes, grilled kielbasa, sauerkraut, and garlic powder. Stir.",
+      "Cover and cook 12–15 min until potatoes are fork-tender and everything is heated through.",
+      "Serve with mustard."
     ],
-    done_when: "Potatoes are fork-tender, kielbasa is hot throughout and nicely charred.",
-    safety: "Grilling kielbasa causes flare-ups from the fat — have the lid ready to close if flames jump up."
+    done_when: "Potatoes fork-tender, kielbasa hot throughout.",
+    safety: "Kielbasa fat drips and causes flare-ups — keep grill lid nearby."
   },
 
-  // ════════════════════════════════════════════════════════════════════
-  // PIZZA (USES GAS PIZZA OVEN)
-  // ════════════════════════════════════════════════════════════════════
+  // PIZZA ───────────────────────────────────────────────────────────────────────
 
   "dutch-oven-pizza": {
-    equipment: "Gas pizza oven (preferred) or Dutch oven",
+    equipment: "Gas pizza oven",
     steps: [
-      "GAS PIZZA OVEN: Preheat to 450–500°F for at least 10 min.",
-      "Stretch or roll out pizza dough on a floured surface to fit your pan or pizza peel.",
-      "Dust pizza peel or pan with cornmeal or flour so dough slides easily.",
-      "Spread pizza sauce evenly, leaving 1-inch crust around the edge.",
-      "Add shredded cheese and toppings (don't overload — it won't cook through).",
+      "Preheat gas pizza oven to 450–500°F for at least 10 min.",
+      "Stretch or roll dough on a floured surface. Dust pizza peel or pan with cornmeal.",
+      "Spread sauce, leaving a 1-inch border. Add cheese and toppings — don't overload.",
       "Slide pizza into the oven. Bake 8–12 min until crust is golden and cheese is bubbling.",
-      "DUTCH OVEN ALTERNATIVE: Grease Dutch oven. Press dough in. Add toppings. Cover and cook on gas grill over medium for 20–25 min until crust is set underneath.",
-      "Cut into slices and serve hot."
+      "Rotate halfway through with the peel for even cooking. Remove and slice."
     ],
-    done_when: "Crust is golden brown, cheese is melted and bubbling, underside is firm when lifted.",
-    safety: "Gas pizza oven runs VERY hot — use the peel and keep hands clear of the opening. Rotate pizza halfway through with the peel for even cooking."
+    done_when: "Crust golden all over, cheese bubbling, underside firm when lifted.",
+    safety: "Pizza oven runs VERY hot — always use the peel. Keep hands clear of the opening."
   },
-
   "simple-dutch-oven-pizzas": {
-    equipment: "Gas pizza oven (preferred) or Dutch oven",
+    equipment: "Gas pizza oven",
     steps: [
-      "Preheat gas pizza oven to 450°F, or set Dutch oven on gas grill medium.",
-      "Press pizza dough into a lightly oiled Dutch oven or onto pizza pan.",
-      "Spread sauce over the dough. Add cheese and chosen toppings.",
-      "GAS PIZZA OVEN: Bake 8–12 min until crust is golden and cheese bubbles.",
-      "DUTCH OVEN: Cover, cook 20–25 min until crust is firm on the bottom.",
-      "Lift a corner to check: the bottom should be golden, not pale or soggy."
+      "Preheat gas pizza oven to 450°F for 10 min.",
+      "Press or roll dough onto a lightly oiled pizza pan. Spread sauce, add cheese and toppings.",
+      "Slide into the oven. Bake 8–12 min, rotating once at the halfway point.",
+      "Crust should be golden on the bottom and the edges browned."
     ],
-    done_when: "Crust is golden on the bottom and top, cheese fully melted and starting to brown.",
-    safety: "Use the peel to load and retrieve from pizza oven. Never reach into a hot pizza oven."
+    done_when: "Crust golden on bottom and top, cheese fully melted.",
+    safety: "Use the peel to load and retrieve. Never reach bare-handed into a hot pizza oven."
   },
-
   "pie-iron-pizzas": {
-    equipment: "Gas grill — grates",
+    equipment: "Gas grill — grates with pie irons",
     steps: [
-      "Heat gas grill to medium.",
-      "Butter the inside of each pie iron.",
-      "Place one slice of bread butter-side-down in the iron.",
-      "Spread pizza sauce on the bread. Add cheese and any toppings.",
-      "Place second slice of bread on top, butter-side-up.",
-      "Close and latch the pie iron. Trim excess bread that hangs out.",
-      "Hold over gas grill grate 3–4 min per side until bread is golden and crispy.",
-      "Open carefully — it will be hot and steaming inside."
+      "Set grill to medium. Butter the inside of each pie iron.",
+      "Place one bread slice butter-side-down in the iron. Spread pizza sauce on the bread.",
+      "Add cheese and toppings. Place second slice butter-side-up on top.",
+      "Close and latch. Trim bread that hangs out.",
+      "Hold over grate 3–4 min per side until golden and crispy.",
+      "Open away from face — steam escapes. Eat immediately."
     ],
-    done_when: "Bread is golden brown on both sides, cheese is melted inside.",
-    safety: "Pie iron handles get hot — use heat gloves. Open the iron away from your face."
+    done_when: "Bread golden on both sides, cheese melted inside.",
+    safety: "Pie iron handles get very hot — use heat gloves. Open the iron away from your face."
   },
-
   "pocket-pizza": {
-    equipment: "Gas grill — grates or pie iron",
+    equipment: "Gas grill — grates with pie irons",
     steps: [
-      "Heat gas grill to medium.",
-      "If using pie iron: butter bread, fill with sauce, cheese, pepperoni, close iron and cook 3–4 min per side.",
-      "If using foil: place toppings on one piece of bread, fold it like a book, and wrap in foil. Cook on grill 5 min per side.",
-      "Unwrap carefully, serve immediately."
+      "Set grill to medium. Butter bread, place butter-side-down in pie iron.",
+      "Spread sauce, add cheese and pepperoni. Close and cook 3–4 min per side until golden.",
+      "Open iron away from face. Eat immediately."
     ],
-    done_when: "Bread is golden, cheese is melted.",
-    safety: "Watch for steam when opening foil packets — open away from face."
+    done_when: "Bread golden, cheese melted.",
+    safety: "Open iron away from face — steam inside."
   },
 
-  // ════════════════════════════════════════════════════════════════════
-  // DESSERTS
-  // ════════════════════════════════════════════════════════════════════
+  // DESSERTS ────────────────────────────────────────────────────────────────────
 
   "banana-boats": {
-    equipment: "Gas grill — grates",
+    equipment: "Gas grill — foil packet on grates",
     steps: [
-      "Preheat gas grill to medium.",
-      "Without peeling, cut each banana along the inside curve (the concave side) lengthwise — don't cut all the way through.",
-      "Gently open the banana like a canoe and stuff the cut with mini chocolate chips and mini marshmallows.",
-      "Wrap the entire banana tightly in foil, sealing all edges.",
-      "Place on grill grate. Cook 10–12 min until banana is soft.",
-      "Use tongs to move to a plate. Let cool 2 min before opening.",
-      "Cut or tear open the top of the foil — watch for steam. Eat with a spoon right out of the peel."
+      "Preheat grill to medium.",
+      "Without peeling, cut each banana lengthwise along the inner curve — don't cut all the way through.",
+      "Gently open like a canoe. Pack the cut with mini chocolate chips and mini marshmallows.",
+      "Wrap the whole banana tightly in foil, sealing all edges.",
+      "Place on grate. Cook 10–12 min until banana is soft.",
+      "Move to a plate with tongs. Cool 2 min. Cut open the top slowly — steam inside. Eat with a spoon."
     ],
-    done_when: "Banana is soft and dark inside the peel, chocolate is melted.",
-    safety: "Steam inside the foil is very hot — open slowly with foil pointing away from your face."
+    done_when: "Banana dark and soft inside the peel, filling melted.",
+    safety: "Steam inside the foil is very hot — open the foil pointed away from your face. Also works over campfire coals — place foil packets near hot coals for 10 min."
   },
-
   "peach-cobbler": {
-    equipment: "Dutch oven — 12-inch, on gas grill OR gas pizza oven",
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "DUTCH OVEN: Grease the inside of the Dutch oven with butter.",
+      "Grease the inside of the Dutch oven with butter.",
       "Pour canned peach pie filling into the bottom. Spread evenly.",
       "Sprinkle dry cake mix evenly over the filling. DO NOT STIR.",
-      "Sprinkle cinnamon over the cake mix.",
-      "Dot thin slices of cold butter across the top.",
-      "Cover with lid. Place Dutch oven on gas grill over medium-low.",
-      "Cook 30–40 min. Check at 30 min — top should be golden brown and dry. Filling should be bubbling at the edges.",
-      "GAS PIZZA OVEN: Pour into an oven-safe pan. Bake at 350°F for 30 min.",
-      "Let cool 5–10 min before serving. Scoop into bowls."
+      "Sprinkle cinnamon on top. Dot with thin slices of cold butter.",
+      "Cover and cook on grill over medium-low 30–40 min.",
+      "Done when top is golden and dry, filling bubbling at the edges. Let cool 5 min."
     ],
-    done_when: "Top is golden and dry, filling is bubbling and thick.",
-    safety: "Dutch oven lid is hot — use heat gloves when checking. Don't stir — the layering is what makes the cobbler texture."
+    done_when: "Top dry and golden, filling bubbling.",
+    safety: "Don't stir — the layering creates the cobbler texture. Lid is very hot — use gloves."
   },
-
   "black-forest-cobbler": {
-    equipment: "Dutch oven — 12-inch, on gas grill OR gas pizza oven",
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
       "Grease Dutch oven with butter.",
       "Pour cherry pie filling into the bottom. Spread evenly.",
-      "Sprinkle dry chocolate cake mix evenly over filling — DO NOT STIR.",
-      "Dot thin slices of cold butter over the cake mix.",
-      "Cover and cook on gas grill over medium-low for 30–40 min.",
-      "GAS PIZZA OVEN: Bake at 350°F for 30 min in an oven-safe pan.",
-      "Done when the top is set and the filling bubbles around the edges."
+      "Sprinkle dry chocolate cake mix evenly over the filling. DO NOT STIR.",
+      "Dot with thin slices of cold butter.",
+      "Cover and cook on grill over medium-low 30–40 min until top is set and filling bubbles at edges."
     ],
-    done_when: "Top looks like baked cake (dry, not wet), cherries bubbling at edges.",
-    safety: "Let it cool 5 min before serving — the filling holds heat and can burn mouths."
+    done_when: "Top dry and set like baked cake, filling bubbling.",
+    safety: "Let cool 5 min before serving — filling holds heat and burns mouths."
   },
-
   "fizzy-fruit-cobbler": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Pour fruit pie filling into greased Dutch oven. Spread evenly.",
-      "Sprinkle dry cake mix evenly over the filling. DO NOT STIR.",
-      "Slowly pour Sprite or 7-Up over the entire top — pour slowly so it soaks in.",
-      "DO NOT add butter or water — the soda does the work.",
-      "Cover and cook on gas grill over medium-low 30–35 min.",
-      "Check at 30 min: top should be golden and mostly dry, filling bubbling at edges."
+      "Grease Dutch oven with butter.",
+      "Pour fruit pie filling into the bottom. Spread evenly.",
+      "Sprinkle dry cake mix evenly over filling. DO NOT STIR.",
+      "Slowly pour one can of Sprite over the top, pouring gently so it soaks in. No butter needed.",
+      "Cover and cook on grill over medium-low 30–35 min until top is golden and set."
     ],
-    done_when: "Top is golden and set, soda has mostly evaporated, filling is bubbling.",
-    safety: "This one bubbles more than regular cobbler — make sure the lid seals well."
+    done_when: "Top golden, soda evaporated, filling bubbling.",
+    safety: "Bubbles more than regular cobbler — make sure lid seals well."
   },
-
   "monkey-bread": {
-    equipment: "Dutch oven — 12-inch, on gas grill OR gas pizza oven",
-    steps: [
-      "Preheat gas pizza oven to 375°F, or set Dutch oven on gas grill medium.",
-      "Mix granulated sugar and cinnamon together in a zip-lock bag.",
-      "Open biscuit cans. Cut each biscuit into quarters.",
-      "Drop biscuit pieces into the cinnamon-sugar bag in batches and shake to coat.",
-      "Place coated biscuit pieces in a greased Dutch oven in a loose pile — don't pack them down.",
-      "Mix melted butter and brown sugar together. Pour evenly over the biscuit pieces.",
-      "DUTCH OVEN: Cover and cook on medium-low for 25–30 min.",
-      "GAS PIZZA OVEN: Bake in an oven-safe bundt or round pan at 375°F for 25–30 min.",
-      "Done when golden brown on top and a toothpick comes out clean.",
-      "Immediately flip out onto a plate (or serve directly from Dutch oven). Best eaten while warm."
-    ],
-    done_when: "Top is deep golden brown, biscuits are cooked through (no raw dough).",
-    safety: "The caramel butter mixture is extremely hot when it comes out. Don't flip it until it's had 2 min to cool slightly."
-  },
-
-  "apple-crisp": {
-    equipment: "Dutch oven — 12-inch, on gas grill OR gas pizza oven",
-    steps: [
-      "Peel and slice apples into thin wedges. Toss with 2 Tbsp sugar and cinnamon. Spread in greased Dutch oven.",
-      "In a bowl, mix oats, brown sugar, flour, and cold butter. Use your fingers to work the butter in until the mixture looks crumbly.",
-      "Spread the oat topping evenly over the apples.",
-      "DUTCH OVEN: Cover and cook on gas grill medium-low for 30–35 min.",
-      "GAS PIZZA OVEN: Bake uncovered at 375°F for 30–35 min in an oven-safe pan.",
-      "Done when apples are soft and the topping is golden brown.",
-      "Let cool 10 min before serving. Great with whipped cream if you have it."
-    ],
-    done_when: "Topping is golden and crispy, apples are bubbling and soft when poked.",
-    safety: "The filling will be very hot — remind scouts to blow on their portion before eating."
-  },
-
-  "pie-iron-pies": {
-    equipment: "Gas grill — grates",
-    steps: [
-      "Heat gas grill to medium.",
-      "Butter one side of each bread slice.",
-      "Place one slice butter-side-down in the pie iron.",
-      "Add about 3 Tbsp of fruit pie filling in the center of the bread, keeping it away from the edges.",
-      "Place the second bread slice on top, butter-side-up.",
-      "Close and latch the pie iron firmly. Trim any bread that sticks out.",
-      "Hold the iron over the grill grate 3–4 min per side until bread is golden and crispy.",
-      "Open the iron away from your face — it will steam. Dust with powdered sugar and serve."
-    ],
-    done_when: "Bread is golden brown on both sides, filling is hot and bubbling.",
-    safety: "Pie iron handles get hot even through insulation — use heat-resistant gloves. Open slowly."
-  },
-
-  "dutch-oven-pies": {
-    equipment: "Gas pizza oven (preferred) OR Dutch oven",
-    steps: [
-      "GAS PIZZA OVEN: Preheat to 375°F.",
-      "Press Pillsbury pie crust into an oven-safe pie dish. Fill with pie filling of choice. Top with second crust, crimp edges, cut 3 slits in top.",
-      "Bake 35–40 min until crust is golden brown.",
-      "DUTCH OVEN: Grease Dutch oven. Press crust in, add filling, place second crust on top and crimp to seal.",
-      "Cover and cook on gas grill medium-low 35–40 min.",
-      "Let cool at least 15 min before cutting — the filling is molten."
-    ],
-    done_when: "Crust is golden brown, filling is bubbling through the slits.",
-    safety: "The filling inside a freshly baked pie holds heat for a long time and will cause burns — wait before serving."
-  },
-
-  "s-more-pie": {
-    equipment: "Dutch oven on gas grill OR gas pizza oven",
-    steps: [
-      "Crush Graham crackers in a bag. Spread them in the bottom of a greased Dutch oven to form a crust. Press down firmly.",
-      "Break chocolate bars into pieces and lay evenly over the Graham crust.",
-      "Cover the chocolate completely with a thick layer of marshmallows.",
-      "Cover Dutch oven with lid. Cook on gas grill over low heat 8–10 min.",
-      "GAS PIZZA OVEN: Use an oven-safe pan, bake at 325°F for 8–10 min.",
-      "Check at 8 min: marshmallows should be puffed and just starting to brown. Chocolate should be melted.",
-      "Serve immediately with a Graham cracker as a scoop — it sets up quickly as it cools."
-    ],
-    done_when: "Marshmallows are puffed and golden on top, chocolate is fully melted underneath.",
-    safety: "Molten marshmallow and chocolate hold heat intensely. Let it cool 3–4 min and warn scouts it's hot."
-  },
-
-  "banana-coffee-cake": {
-    equipment: "Dutch oven on gas grill OR gas pizza oven",
-    steps: [
-      "Mash ripe bananas in a bowl until smooth.",
-      "Stir in Bisquick, sugar, and cinnamon until a thick batter forms.",
-      "Pour batter into a greased Dutch oven or oven-safe pan.",
-      "In a small bowl mix brown sugar, cinnamon, and a little butter to make a crumb topping. Sprinkle over batter.",
-      "DUTCH OVEN: Cover and cook on gas grill medium-low 25–30 min.",
-      "GAS PIZZA OVEN: Bake at 375°F for 25–30 min.",
-      "Test with a toothpick — should come out clean. Let cool 10 min before serving."
-    ],
-    done_when: "Toothpick comes out clean, top is golden, edges pull away slightly from the pot.",
-    safety: "Bananas make this dense — make sure the center is cooked, not just the outside."
-  },
-
-  "cornbread": {
-    equipment: "Dutch oven on gas grill OR gas pizza oven",
-    steps: [
-      "Preheat gas pizza oven to 400°F, or heat Dutch oven on gas grill medium.",
-      "In a bowl mix Jiffy corn muffin mix, egg, and milk per package instructions. Don't over-mix.",
-      "Grease Dutch oven (or muffin-size pan) with butter.",
-      "Pour batter in, spreading evenly.",
-      "DUTCH OVEN: Cover and cook on medium for 15–18 min.",
-      "GAS PIZZA OVEN: Bake 15–18 min until golden.",
-      "Toothpick should come out clean. Let cool 5 min before cutting."
-    ],
-    done_when: "Top is golden, toothpick clean, edges pull slightly from the side.",
-    safety: "Cornbread from the Dutch oven is very hot on the bottom — use gloves when moving."
-  },
-
-  "egg-bake": {
     equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill over medium.",
-      "Cook sausage in Dutch oven until browned. Drain fat.",
-      "In a bowl, beat all eggs with milk, salt, and pepper.",
-      "Pour egg mixture over the sausage in the Dutch oven.",
-      "Sprinkle shredded cheese over the top.",
-      "Cover and cook on medium-low 18–22 min until eggs are fully set.",
-      "Test by shaking gently — no jiggle means it's done.",
-      "Scoop into portions with a large spoon."
+      "Mix granulated sugar and cinnamon in a zip-lock bag.",
+      "Open biscuit cans. Cut each biscuit into quarters.",
+      "Toss biscuit quarters in the cinnamon-sugar bag in batches.",
+      "Pile coated pieces loosely into a greased Dutch oven.",
+      "Mix melted butter and brown sugar. Pour evenly over the top.",
+      "Cover and cook on grill over medium-low 25–30 min until deep golden and toothpick comes out clean."
     ],
-    done_when: "Eggs fully set throughout, cheese melted, no runny liquid.",
-    safety: "Eggs must reach 160°F. Check the center — the sides set before the middle does."
+    done_when: "Top deep golden, biscuits cooked through.",
+    safety: "The caramel butter is extremely hot — let cool 2 min before serving."
   },
-
-  "baked-beans": {
-    equipment: "Dutch oven on gas grill",
+  "apple-crisp": {
+    equipment: "Dutch oven — 12-inch, on gas grill",
     steps: [
-      "Heat Dutch oven on gas grill medium.",
-      "Cook bacon until crispy. Remove and crumble. Leave 1 Tbsp drippings.",
-      "Add diced onion to drippings, cook 3 min.",
-      "Pour in canned baked beans. Add brown sugar, mustard, and ketchup.",
-      "Stir to combine and bring to a simmer.",
-      "Cook uncovered on medium-low 20 min, stirring occasionally.",
+      "Peel and slice apples thin. Toss with 2 Tbsp sugar and cinnamon. Spread in greased Dutch oven.",
+      "In a bowl, mix oats, brown sugar, flour, and cold butter with fingers until crumbly.",
+      "Spread topping evenly over the apples.",
+      "Cover and cook on grill over medium-low 30–35 min until apples bubble and topping is golden.",
+      "Let cool 10 min before serving."
+    ],
+    done_when: "Topping golden and crispy, apples bubbling and soft.",
+    safety: "Filling stays hot a long time — tell scouts to blow on their serving."
+  },
+  "pie-iron-pies": {
+    equipment: "Gas grill — grates with pie irons",
+    steps: [
+      "Set grill to medium. Butter one side of each bread slice.",
+      "Place one slice butter-side-down in the pie iron.",
+      "Spoon 3 Tbsp fruit pie filling in the center — keep away from the edges.",
+      "Place second slice butter-side-up on top. Close and latch. Trim excess bread.",
+      "Hold over grate 3–4 min per side until golden.",
+      "Open away from face. Dust with powdered sugar."
+    ],
+    done_when: "Bread golden on both sides, filling hot.",
+    safety: "Pie iron handles get hot — use gloves. Open slowly."
+  },
+  "dutch-oven-pies": {
+    equipment: "Gas pizza oven",
+    steps: [
+      "Preheat gas pizza oven to 375°F.",
+      "Press pie crust into an oven-safe dish. Fill with pie filling. Top with second crust, crimp edges, cut 3 slits in top.",
+      "Bake 35–40 min until crust is golden and filling bubbles through the slits.",
+      "Let cool 15 min before cutting — filling is molten."
+    ],
+    done_when: "Crust golden, filling bubbling through slits.",
+    safety: "Fresh pie filling holds heat — wait before serving."
+  },
+  "s-more-pie": {
+    equipment: "Dutch oven — on gas grill",
+    steps: [
+      "Crush Graham crackers and press firmly into the bottom of a greased Dutch oven.",
+      "Break chocolate bars into pieces and lay evenly over the crust.",
+      "Cover chocolate completely with mini marshmallows.",
+      "Cover Dutch oven with lid. Cook on grill over low heat 8–10 min.",
+      "Done when marshmallows are puffed and golden, chocolate melted. Serve immediately."
+    ],
+    done_when: "Marshmallows puffed and golden, chocolate fully melted.",
+    safety: "Molten marshmallow and chocolate hold heat intensely — let cool 3–4 min."
+  },
+  "banana-coffee-cake": {
+    equipment: "Dutch oven — on gas grill",
+    steps: [
+      "Mash 2 ripe bananas until smooth. Stir in Bisquick, sugar, and cinnamon until a thick batter forms.",
+      "Pour batter into a greased Dutch oven. Spread evenly.",
+      "Mix brown sugar, cinnamon, and a little butter for a crumb topping. Sprinkle over batter.",
+      "Cover and cook on grill over medium-low 25–30 min until toothpick comes out clean.",
+      "Let cool 10 min before scooping."
+    ],
+    done_when: "Toothpick clean, top golden, edges pulling from the pot slightly.",
+    safety: "Dense batter — check the center is fully cooked, not just the outside."
+  },
+  "cornbread": {
+    equipment: "Dutch oven — on gas grill",
+    steps: [
+      "Grease Dutch oven with butter. Set grill to medium.",
+      "Mix Jiffy corn muffin mix, egg, and milk per box. Don't overmix.",
+      "Pour batter into Dutch oven. Spread evenly.",
+      "Cover and cook on medium 15–18 min. Toothpick should come out clean.",
+      "Let cool 5 min before cutting."
+    ],
+    done_when: "Top golden, toothpick clean, edges pull from the side.",
+    safety: "Dutch oven bottom gets very hot — use gloves when moving."
+  },
+  "baked-beans": {
+    equipment: "Dutch oven — on gas grill",
+    steps: [
+      "Heat Dutch oven on grill over medium. Cook bacon until crispy. Remove and crumble. Leave 1 Tbsp drippings.",
+      "Add diced onion, cook 3 min. Pour in canned baked beans, brown sugar, mustard, and ketchup. Stir.",
+      "Simmer uncovered on medium-low 20 min, stirring every 5 min.",
       "Top with crumbled bacon before serving."
     ],
-    done_when: "Beans are thick, sticky, and bubbling. Bacon is crispy on top.",
-    safety: "Beans scorch on the bottom if the heat is too high — stir every 5 min."
+    done_when: "Beans thick, sticky, and bubbling.",
+    safety: "Beans scorch if heat is too high — stir every 5 min."
   },
 
-  // ════════════════════════════════════════════════════════════════════
-  // GRAB AND GO — brief instructions only
-  // ════════════════════════════════════════════════════════════════════
+  // GRAB AND GO ─────────────────────────────────────────────────────────────────
 
   "grab-go-pop-tarts": {
     equipment: "No equipment needed",
-    steps: [
-      "Open the box. Hand each scout one Pop-Tarts packet and one juice box.",
-      "Everyone eats. Wrappers go in the trash bag.",
-      "Done. Pack up and head out."
-    ],
-    done_when: "Scout is holding food.",
-    safety: "Check for food allergies in the patrol before selecting flavors."
+    steps: ["Hand each scout one Pop-Tarts packet and one juice box.", "Wrappers go in the trash bag."],
+    done_when: "Scout is holding food.", safety: "Check for food allergies before selecting flavors."
   },
-
   "grab-go-granola-banana": {
     equipment: "No equipment needed",
-    steps: [
-      "Hand each scout one granola bar pack and one banana.",
-      "Wrappers and peels go in the trash bag.",
-      "Zero cleanup — ready to go."
-    ],
-    done_when: "Immediate.",
-    safety: "Check for tree nut allergies — most granola bars contain nuts or are made in facilities that process nuts."
+    steps: ["Hand each scout one granola bar and one banana.", "Wrappers and peels go in the trash bag."],
+    done_when: "Immediate.", safety: "Check for tree nut allergies — most granola bars contain or are processed near nuts."
   },
-
   "grab-go-instant-oatmeal": {
-    equipment: "Gas grill or camp stove — one pot",
+    equipment: "Gas grill — one pot of boiling water",
     steps: [
-      "Fill a large pot with water and bring to a boil on the gas grill.",
-      "Open each oatmeal cup and set one in front of each scout.",
-      "Pour boiling water into each cup to the fill line.",
-      "Stir, replace the lid (or cover with foil), wait 3 min.",
-      "Eat straight from the cup. Cup goes in the trash — only the pot to wash."
+      "Bring a large pot of water to a boil on the grill.",
+      "Set one oatmeal cup in front of each scout.",
+      "One designated person carefully pours boiling water into each cup to the fill line. Stir, cover, wait 3 min.",
+      "Eat from the cup. Cups go in the trash — only the pot to wash."
     ],
-    done_when: "Oats have absorbed all the water and are soft.",
-    safety: "Boiling water burns — have one designated person pour. Use a ladle, not the pot."
+    done_when: "Oats have absorbed all water and are soft.",
+    safety: "Boiling water burns — use a ladle, not the pot. Have one designated person pour."
   },
-
   "grab-go-cereal-milk": {
     equipment: "No equipment needed",
-    steps: [
-      "Hand each scout one cereal cup and one shelf-stable milk box.",
-      "Open the cereal cup, pour milk in, eat with a spoon.",
-      "Trash goes in the bag. Done."
-    ],
-    done_when: "Immediate.",
-    safety: "Shelf-stable milk does not need refrigeration until opened — buy at Walmart grocery aisle."
+    steps: ["Hand each scout a cereal cup and a shelf-stable milk box.", "Open the cup, pour milk in, eat with a spoon.", "Trash goes in the bag."],
+    done_when: "Immediate.", safety: "Shelf-stable milk doesn't need refrigeration until opened."
   },
-
   "grab-go-bagel-cream-cheese": {
     equipment: "No equipment needed",
-    steps: [
-      "Pull bagels and cream cheese cups from the cooler.",
-      "Hand each scout one bagel and one cream cheese cup.",
-      "Open the cream cheese cup. Use a plastic knife to spread.",
-      "Wrappers and cups go in the trash bag."
-    ],
-    done_when: "Immediate.",
-    safety: "Keep cream cheese cold until handing out — don't leave it sitting in warm weather."
+    steps: ["Pull bagels and cream cheese cups from the cooler.", "Hand each scout one bagel and one cream cheese cup with a plastic knife.", "Spread and eat. Wrappers in the trash."],
+    done_when: "Immediate.", safety: "Keep cream cheese cold until handing out."
   },
-
   "grab-go-donuts": {
     equipment: "No equipment needed",
-    steps: [
-      "Open the donut box.",
-      "Hand each scout 2 donuts and one chocolate milk box.",
-      "Eat. Wrappers go in the trash bag.",
-      "Final-day treat — scouts earned it."
-    ],
-    done_when: "Immediate.",
-    safety: "No prep, no fire, no dishes."
+    steps: ["Open the donut box. Hand each scout 2 donuts and one chocolate milk box.", "Eat. Wrappers in the trash bag."],
+    done_when: "Immediate.", safety: "No prep, no fire, no dishes."
   },
-
   "grab-go-muffins": {
     equipment: "No equipment needed",
-    steps: [
-      "Bring out the Walmart bakery muffin pack and applesauce pouches.",
-      "Hand each scout one muffin and one pouch.",
-      "Wrappers go in the trash bag."
-    ],
-    done_when: "Immediate.",
-    safety: "Buy muffins the day before. Keep in a sealed bag overnight to stay fresh."
+    steps: ["Hand each scout one muffin and one applesauce pouch.", "Wrappers go in the trash bag."],
+    done_when: "Immediate.", safety: "Buy muffins the day before — keep in a sealed bag overnight."
   },
-
   "grab-go-nutrigrain": {
     equipment: "No equipment needed",
-    steps: [
-      "Open the Nutri-Grain bar box.",
-      "Hand each scout one bar and one OJ bottle.",
-      "Eat. Trash goes in the bag."
-    ],
-    done_when: "Immediate.",
-    safety: "No prep required."
+    steps: ["Hand each scout one Nutri-Grain bar and one OJ bottle.", "Eat. Trash in the bag."],
+    done_when: "Immediate.", safety: "No prep required."
   },
-
   "grab-go-pb-crackers": {
     equipment: "No equipment needed",
-    steps: [
-      "Hand each scout one Ritz Bits PB pack and one fruit pouch.",
-      "Eat. All wrappers go in the trash bag."
-    ],
-    done_when: "Immediate.",
-    safety: "Contains peanuts — check for nut allergies in the patrol before choosing this option."
+    steps: ["Hand each scout one Ritz Bits PB pack and one fruit pouch.", "Eat. Wrappers in the trash."],
+    done_when: "Immediate.", safety: "Contains peanuts — check for nut allergies in the patrol first."
   },
-
   "grab-go-trail-mix": {
     equipment: "No equipment needed",
-    steps: [
-      "Pull string cheese sticks from the cooler.",
-      "Hand each scout one trail mix bag and one string cheese.",
-      "Eat. Wrappers go in the trash."
-    ],
-    done_when: "Immediate.",
-    safety: "Keep string cheese refrigerated until ready. May contain nuts — check for allergies."
-  },
+    steps: ["Pull string cheese from the cooler.", "Hand each scout one trail mix bag and one string cheese.", "Wrappers in the trash."],
+    done_when: "Immediate.", safety: "Keep string cheese refrigerated until ready. May contain nuts — check for allergies."
+  }
 
 };
