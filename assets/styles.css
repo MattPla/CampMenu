@@ -593,6 +593,15 @@ footer {
   page-break-inside: avoid;
   break-inside: avoid;
 }
+.rcp-header-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid var(--line);
+  background: #fdfaf4;
+}
 .rcp-card-header {
   display: flex;
   justify-content: space-between;

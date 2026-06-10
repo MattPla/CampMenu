@@ -4,6 +4,7 @@ const walmartCosts = window.WALMART_RECIPE_COSTS || {};
 const walmartDefaults = window.WALMART_MEAL_TYPE_DEFAULTS || {};
 const walmartItems = window.WALMART_ITEM_PRICES || {};
 const recipeDetails = window.RECIPE_DETAILS || {};   // detailed itemized ingredients
+const recipeHeaderImages = window.RECIPE_HEADER_IMAGES || {};
 const mealSlots = ['breakfast', 'lunch', 'dinner', 'dessert'];
 
 let days = [
@@ -39,6 +40,12 @@ function getRecipeCost(recipeId, mealType) {
 }
 function getWalmartNote(recipeId) {
   return walmartCosts[recipeId]?.walmart_note || 'See recipe for ingredients';
+}
+function recipeHeaderImageHtml(recipe) {
+  const image = recipeHeaderImages[recipe.id];
+  return image
+    ? `<img class="rcp-header-image" src="${image.src}" alt="${image.alt || recipe.title}" loading="lazy">`
+    : '';
 }
 
 // Build a walmart.com search URL for an item
@@ -648,6 +655,7 @@ function buildRecipeCardsHtml() {
 
     return `
     <div class="rcp-card">
+      ${recipeHeaderImageHtml(r)}
       <div class="rcp-card-header meal-header-${e.meal}">
         <span class="rcp-context">${e.day} &bull; ${niceMeal(e.meal)}</span>
         <div class="rcp-cost-badge">${fmtMoney(cost)}<span class="per-scout">/scout</span></div>
