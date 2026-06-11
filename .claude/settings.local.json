@@ -2,7 +2,31 @@
   "permissions": {
     "allow": [
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(curl -sf http://localhost:8123/index.html)",
+      "Bash(cat /tmp/server.log; echo \"---\"; curl -sf http://localhost:8123/index.html | head -5)",
+      "Read(//tmp/**)",
+      "Bash(chromium-cli --session campmenu)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(node verify_tiers.mjs)",
+      "Bash(mkdir -p /tmp/pw_verify)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(cygpath -w /tmp/pw_verify)",
+      "Read(//c/Users/Mattp/AppData/Local/Temp/pw_verify/**)",
+      "Bash(node verify_tiers2.mjs)",
+      "Bash(find / -name \"verify_tiers2.mjs\" 2>/dev/null)",
+      "Read(//c//**)",
+      "Bash(cat)",
+      "Bash(node debug_badge.mjs)",
+      "Bash(curl -s \"https://script.google.com/macros/s/AKfycbxe2G4EBSfnumHsMFVBDyAuXKl4Dqy9_OkFJHC0DlskkZjzWVgsUDpxe6Zeeqv814K8/exec\" -o /tmp/pw_verify/live_recipes.json -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(node -e ' *)",
+      "Bash(node verify_recipes_live.mjs)"
+    ],
+    "additionalDirectories": [
+      "\\tmp\\pw_verify"
     ]
   }
 }
