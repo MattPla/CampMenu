@@ -1,0 +1,114 @@
+{
+  "grab-go-pop-tarts": {
+    "src": "assets/recipe-images/grab-go-pop-tarts-wide.webp",
+    "alt": "Pop-Tarts & Juice Box campsite recipe header"
+  },
+  "grab-go-granola-banana": {
+    "src": "assets/recipe-images/grab-go-granola-banana-wide.webp",
+    "alt": "Granola Bar & Banana campsite recipe header"
+  },
+  "grab-go-instant-oatmeal": {
+    "src": "assets/recipe-images/grab-go-instant-oatmeal-wide.webp",
+    "alt": "Instant Oatmeal Cup campsite recipe header"
+  },
+  "grab-go-cereal-milk": {
+    "src": "assets/recipe-images/grab-go-cereal-milk-wide.webp",
+    "alt": "Cereal Cup & Shelf-Stable Milk campsite recipe header"
+  },
+  "grab-go-bagel-cream-cheese": {
+    "src": "assets/recipe-images/grab-go-bagel-cream-cheese-wide.webp",
+    "alt": "Bagel & Cream Cheese campsite recipe header"
+  },
+  "grab-go-muffins": {
+    "src": "assets/recipe-images/grab-go-muffins-wide.webp",
+    "alt": "Bakery Muffins & Applesauce Pouch campsite recipe header"
+  },
+  "grab-go-nutrigrain": {
+    "src": "assets/recipe-images/grab-go-nutrigrain-wide.webp",
+    "alt": "Nutri-Grain Bar & OJ Bottle campsite recipe header"
+  },
+  "grab-go-donuts": {
+    "src": "assets/recipe-images/grab-go-donuts-wide.webp",
+    "alt": "Donuts & Chocolate Milk campsite recipe header"
+  },
+  "grab-go-pb-crackers": {
+    "src": "assets/recipe-images/grab-go-pb-crackers-wide.webp",
+    "alt": "Peanut Butter Crackers & Fruit Pouch campsite recipe header"
+  },
+  "grab-go-trail-mix": {
+    "src": "assets/recipe-images/grab-go-trail-mix-wide.webp",
+    "alt": "Trail Mix Bag & String Cheese campsite recipe header"
+  },
+  "cb-crackers-cheese": {
+    "src": "assets/recipe-images/cb-crackers-cheese-wide.webp",
+    "alt": "Crackers & Cheese Cubes campsite recipe header"
+  },
+  "cb-summer-sausage-crackers": {
+    "src": "assets/recipe-images/cb-summer-sausage-crackers-wide.webp",
+    "alt": "Summer Sausage, Cheese & Crackers campsite recipe header"
+  },
+  "cb-trail-mix-pretzels": {
+    "src": "assets/recipe-images/cb-trail-mix-pretzels-wide.webp",
+    "alt": "Trail Mix & Pretzel Snack Bags campsite recipe header"
+  },
+  "cb-chips-salsa": {
+    "src": "assets/recipe-images/cb-chips-salsa-wide.webp",
+    "alt": "Tortilla Chips & Salsa campsite recipe header"
+  },
+  "cb-cocoa-cookies": {
+    "src": "assets/recipe-images/cb-cocoa-cookies-wide.webp",
+    "alt": "Hot Cocoa & Cookies campsite recipe header"
+  },
+  "cb-fruit-cups": {
+    "src": "assets/recipe-images/cb-fruit-cups-wide.webp",
+    "alt": "Fruit Cups & Fruit Snacks campsite recipe header"
+  },
+  "cb-pretzels-pb": {
+    "src": "assets/recipe-images/cb-pretzels-pb-wide.webp",
+    "alt": "Pretzels & Peanut Butter Dip Cups campsite recipe header"
+  },
+  "cb-smores-kit": {
+    "src": "assets/recipe-images/cb-smores-kit-wide.webp",
+    "alt": "S'mores Kit (Campfire) campsite recipe header"
+  },
+  "side-chips": {
+    "src": "assets/recipe-images/side-chips-wide.webp",
+    "alt": "Bag of Chips campsite recipe header"
+  },
+  "side-fruit-cup": {
+    "src": "assets/recipe-images/side-fruit-cup-wide.webp",
+    "alt": "Fruit Cup campsite recipe header"
+  },
+  "side-apple-slices": {
+    "src": "assets/recipe-images/side-apple-slices-wide.webp",
+    "alt": "Apple Slices campsite recipe header"
+  },
+  "side-baby-carrots-ranch": {
+    "src": "assets/recipe-images/side-baby-carrots-ranch-wide.webp",
+    "alt": "Baby Carrots & Ranch campsite recipe header"
+  },
+  "side-side-salad": {
+    "src": "assets/recipe-images/side-side-salad-wide.webp",
+    "alt": "Side Salad campsite recipe header"
+  },
+  "side-applesauce": {
+    "src": "assets/recipe-images/side-applesauce-wide.webp",
+    "alt": "Applesauce Cup campsite recipe header"
+  },
+  "side-coleslaw": {
+    "src": "assets/recipe-images/side-coleslaw-wide.webp",
+    "alt": "Coleslaw campsite recipe header"
+  },
+  "side-pickle-spears": {
+    "src": "assets/recipe-images/side-pickle-spears-wide.webp",
+    "alt": "Pickle Spears campsite recipe header"
+  },
+  "side-oven-fries": {
+    "src": "assets/recipe-images/side-oven-fries-wide.webp",
+    "alt": "Oven Fries campsite recipe header"
+  },
+  "side-canned-corn": {
+    "src": "assets/recipe-images/side-canned-corn-wide.webp",
+    "alt": "Canned Corn campsite recipe header"
+  }
+}
