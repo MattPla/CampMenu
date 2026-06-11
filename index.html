@@ -15,23 +15,6 @@
       <h1>Camp Menu Builder</h1>
       <p class="lead">Plan meals, stay on budget, get your Walmart shopping list.</p>
     </div>
-    <div class="hero-card">
-      <div class="hero-fields">
-        <div class="field-group">
-          <label for="campName">Campout name</label>
-          <input id="campName" type="text" value="Weekend Campout" />
-        </div>
-        <div class="field-group">
-          <label for="peopleCount">Scouts eating</label>
-          <input id="peopleCount" type="number" min="1" value="12" />
-        </div>
-        <div class="field-group">
-          <label for="budgetPerKid">Budget per scout ($)</label>
-          <input id="budgetPerKid" type="number" min="0" step="0.50" value="25.00" />
-        </div>
-      </div>
-      <button id="generateBtn" class="btn-primary">Generate Plan</button>
-    </div>
   </header>
 
   <!-- ── BUDGET METER ──────────────────────────────────────────────────── -->
@@ -62,52 +45,25 @@
     </div>
   </div>
 
-  <main>
+  <main class="app-loading">
 
-    <!-- ── BUILD MENU ──────────────────────────────────────────────────── -->
-    <section class="panel section-build">
-      <div class="section-head">
-        <div>
-          <h2>Build Your Menu</h2>
-          <p>Add days, pick meals for each slot. Costs update automatically.</p>
-        </div>
-        <div class="btn-row">
-          <button id="addDayBtn" class="btn-secondary">+ Add Day</button>
-          <button id="clearPlanBtn" class="btn-ghost">Clear All</button>
-        </div>
-      </div>
-      <div id="daysContainer" class="days-grid"></div>
-    </section>
+    <div class="app-loading-overlay" id="appLoadingOverlay">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading recipes&hellip;</p>
+    </div>
 
-    <!-- ── COST TABLE + RECIPE FINDER ─────────────────────────────────── -->
-    <section class="two-col">
+    <!-- ── TOP-LEVEL NAV ───────────────────────────────────────────────── -->
+    <div class="main-tab-bar" role="tablist">
+      <button class="main-tab-btn active" data-maintab="research" role="tab">🔍 Research</button>
+      <button class="main-tab-btn" data-maintab="plan" role="tab">📋 Plan</button>
+      <button class="main-tab-btn" data-maintab="shop" role="tab">🛒 Shop</button>
+    </div>
 
-      <!-- Cost breakdown table -->
-      <div class="panel">
-        <h2>Cost Per Scout Breakdown</h2>
-        <p class="panel-sub">See exactly how each meal affects your budget.</p>
-        <div class="table-wrap">
-          <table id="costTable" class="cost-table">
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Meal</th>
-                <th>Recipe</th>
-                <th class="num">$/Scout</th>
-                <th class="num">Running Total</th>
-              </tr>
-            </thead>
-            <tbody id="costTableBody">
-              <tr class="empty-row"><td colspan="5">No meals selected yet. Add meals above.</td></tr>
-            </tbody>
-            <tfoot id="costTableFoot"></tfoot>
-          </table>
-        </div>
-      </div>
-
-      <!-- Recipe finder -->
-      <div class="panel">
+    <!-- ── RESEARCH TAB: Recipe Finder ─────────────────────────────────── -->
+    <div class="main-tab-pane" id="mainpane-research">
+      <section class="panel">
         <h2>Recipe Finder</h2>
+        <p class="panel-sub">Browse recipes for ideas before you build your menu — search, filter, and explore what's possible.</p>
         <div class="filters">
           <input id="searchBox" type="search" placeholder="Search recipes, tags, tools..." />
           <select id="mealFilter">
@@ -116,6 +72,8 @@
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
             <option value="dessert">Dessert</option>
+            <option value="cracker_barrel">Cracker Barrel</option>
+            <option value="side">Side</option>
           </select>
           <select id="difficultyFilter">
             <option value="all">Any difficulty</option>
@@ -126,10 +84,10 @@
             <option value="5">Any</option>
           </select>
           <select id="costFilter">
-            <option value="all">Any cost</option>
-            <option value="2">Under $2/scout</option>
-            <option value="3">Under $3/scout</option>
-            <option value="4">Under $4/scout</option>
+            <option value="all">Any price tier</option>
+            <option value="low">$ Budget (under $2)</option>
+            <option value="mid">$$ Standard ($2&ndash;$4)</option>
+            <option value="high">$$$ Premium ($4+)</option>
           </select>
           <select id="cookFilter">
             <option value="all">All options</option>
@@ -137,112 +95,410 @@
             <option value="no_cook">No-cook only</option>
           </select>
         </div>
+        <div class="dietary-filters" id="dietaryFilters">
+          <span class="dietary-filters-label">Hide recipes containing:</span>
+          <label class="dietary-check"><input type="checkbox" data-allergen="dairy"> Dairy</label>
+          <label class="dietary-check"><input type="checkbox" data-allergen="egg"> Egg</label>
+          <label class="dietary-check"><input type="checkbox" data-allergen="gluten/wheat"> Gluten/Wheat</label>
+          <label class="dietary-check"><input type="checkbox" data-allergen="nuts"> Tree Nuts</label>
+          <label class="dietary-check"><input type="checkbox" data-allergen="peanuts"> Peanuts</label>
+        </div>
         <div id="recipeList" class="recipe-list"></div>
-      </div>
 
-    </section>
+        <details class="community-submit" id="communitySubmitPanel">
+          <summary>Share a Recipe with Other Scouts</summary>
+          <div class="submit-body">
+            <p class="panel-sub">Have a recipe or side that worked great on a campout? Share it here — a leader will review it before it shows up for everyone.</p>
+            <div class="submit-fields">
+              <div class="field-group">
+                <label for="submitTitle">Recipe title</label>
+                <input id="submitTitle" type="text" placeholder="e.g. Pancake Tacos">
+              </div>
+              <div class="field-group">
+                <label for="submitMealType">Meal type</label>
+                <select id="submitMealType">
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="cracker_barrel">Cracker Barrel</option>
+                  <option value="side">Side</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="submitServings">Servings (ingredients below feed this many)</label>
+                <input id="submitServings" type="number" min="1" value="4">
+              </div>
+              <div class="field-group">
+                <label for="submitDifficulty">Difficulty</label>
+                <select id="submitDifficulty">
+                  <option value="1">1 - Easy</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Advanced</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="submitPrepMinutes">Prep minutes</label>
+                <input id="submitPrepMinutes" type="number" min="0" value="0">
+              </div>
+              <div class="field-group">
+                <label for="submitCookMinutes">Cook minutes</label>
+                <input id="submitCookMinutes" type="number" min="0" value="0">
+              </div>
+              <div class="field-group">
+                <label for="submitEquipment">Equipment needed (comma-separated)</label>
+                <input id="submitEquipment" type="text" placeholder="e.g. Camp stove, Griddle">
+              </div>
+              <div class="field-group">
+                <label for="submitCategories">Tags (comma-separated, optional)</label>
+                <input id="submitCategories" type="text" placeholder="e.g. kid_favorite">
+              </div>
+              <div class="field-group">
+                <label for="submitAllergens">Common allergens (comma-separated, optional)</label>
+                <input id="submitAllergens" type="text" placeholder="e.g. dairy, gluten/wheat">
+              </div>
+              <div class="field-group">
+                <label for="submitSubmittedBy">Your name / patrol (optional)</label>
+                <input id="submitSubmittedBy" type="text" placeholder="e.g. Alex, Troop 42">
+              </div>
+            </div>
 
-    <!-- ── COVERAGE ───────────────────────────────────────────────────── -->
-    <section class="panel">
-      <h2>Menu Coverage</h2>
-      <div id="coverageReport" class="coverage-grid"></div>
-    </section>
+            <div class="submit-ingredients">
+              <h4>Ingredients</h4>
+              <div id="submitIngredients"></div>
+              <button id="addIngredientBtn" class="btn-secondary" type="button">+ Add Ingredient</button>
+            </div>
 
-    <!-- ── SCOUT PLAN OUTPUT ─────────────────────────────────────────── -->
-    <section class="panel scout-output" id="scoutOutput">
+            <div class="field-group">
+              <label for="submitDirections">Directions</label>
+              <textarea id="submitDirections" rows="3" placeholder="How to cook it..."></textarea>
+            </div>
+            <div class="field-group">
+              <label for="submitCookNotes">Cook notes / tips (one per line, optional)</label>
+              <textarea id="submitCookNotes" rows="2"></textarea>
+            </div>
+            <div class="submit-fields">
+              <div class="field-group">
+                <label for="submitCost">Estimated cost per scout ($, optional)</label>
+                <input id="submitCost" type="number" min="0" step="0.05" placeholder="e.g. 1.85">
+              </div>
+              <div class="field-group">
+                <label for="submitWalmartNote">Walmart shopping note (optional)</label>
+                <input id="submitWalmartNote" type="text" placeholder="e.g. pancake mix $3, syrup $4">
+              </div>
+            </div>
 
-      <div class="output-header">
-        <div>
-          <h2>Your Camp Plan</h2>
-          <p class="panel-sub">Pick a tab, fill in names, then print — or download a file.</p>
+            <div class="btn-row">
+              <button id="submitRecipeBtn" class="btn-primary" type="button">Submit Recipe</button>
+            </div>
+            <div id="submitStatus" class="submit-status hidden"></div>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <!-- ── PLAN TAB: Step-by-step wizard ────────────────────────────────── -->
+    <div class="main-tab-pane hidden" id="mainpane-plan">
+
+      <!-- Step 1: Trip Basics -->
+      <div class="wizard-step active" id="wizardStep1" data-step="1">
+        <div class="wizard-step-head" data-step="1">
+          <span class="wizard-step-num" data-num="1"></span>
+          <span class="wizard-step-title">Trip Basics</span>
         </div>
-        <div class="btn-row">
-          <button id="printScoutBtn" class="btn-primary">Print This Tab</button>
-          <span class="export-divider">Save for leaders:</span>
-          <button id="downloadShoppingCsvBtn" class="btn-secondary">Shopping .csv</button>
-          <button id="downloadCostCsvBtn" class="btn-secondary">Cost Report .csv</button>
-          <button id="downloadJsonBtn" class="btn-secondary">Plan .json</button>
-        </div>
-      </div>
-
-      <!-- Tab bar -->
-      <div class="tab-bar" role="tablist">
-        <button class="tab-btn active" data-tab="shopping" role="tab">Shopping List</button>
-        <button class="tab-btn" data-tab="recipes"  role="tab">Recipe Cards</button>
-        <button class="tab-btn" data-tab="schedule" role="tab">Schedule &amp; Duties</button>
-      </div>
-
-      <!-- ── TAB 1: Shopping List ──────────────────────────────────── -->
-      <div class="tab-pane" id="tab-shopping">
-        <div class="tab-intro">
-          <p>Check off items as you put them in the cart. Click <strong>Shop at Walmart</strong> to search the current price.</p>
-          <div class="legend-row">
-            <span class="grid-legend"><span class="legend-dot dot-meat"></span>Meat &amp; Protein</span>
-            <span class="grid-legend"><span class="legend-dot dot-dairy"></span>Dairy &amp; Eggs</span>
-            <span class="grid-legend"><span class="legend-dot dot-produce"></span>Produce &amp; Canned</span>
-            <span class="grid-legend"><span class="legend-dot dot-dry"></span>Dry Goods</span>
-            <span class="grid-legend"><span class="legend-dot dot-other"></span>Other</span>
+        <div class="wizard-step-body">
+          <p class="panel-sub">Set up your campout details — these drive the budget meter and cost calculations everywhere.</p>
+          <div class="wizard-fields">
+            <div class="field-group">
+              <label for="campName">Campout name</label>
+              <input id="campName" type="text" value="Weekend Campout" />
+            </div>
+            <div class="field-group">
+              <label for="peopleCount">Scouts eating</label>
+              <input id="peopleCount" type="number" min="1" value="12" />
+            </div>
+            <div class="field-group">
+              <label for="budgetPerKid">Budget per scout ($)</label>
+              <input id="budgetPerKid" type="number" min="0" step="0.50" value="25.00" />
+            </div>
+          </div>
+          <div class="btn-row wizard-actions">
+            <button id="step1ContinueBtn" class="btn-primary">Continue to Meal Plan ▸</button>
           </div>
         </div>
-        <div class="excel-wrap">
-          <table class="excel-grid" id="shoppingGrid">
-            <thead>
-              <tr>
-                <th class="xcol-chk"><input type="checkbox" id="checkAll" title="Check all" /></th>
-                <th class="xcol-cat">Cat.</th>
-                <th class="xcol-item">Item</th>
-                <th class="xcol-qty xnum">Qty</th>
-                <th class="xcol-unit">Unit</th>
-                <th class="xcol-product">Walmart Product</th>
-                <th class="xcol-price xnum">Est. Price</th>
-                <th class="xcol-meal">Used In</th>
-                <th class="xcol-link">Shop</th>
-              </tr>
-            </thead>
-            <tbody id="shoppingGridBody">
-              <tr class="xempty"><td colspan="9">Select meals above — your shopping list builds automatically.</td></tr>
-            </tbody>
-            <tfoot id="shoppingGridFoot"></tfoot>
-          </table>
+      </div>
+
+      <!-- Step 2: Plan Your Meals -->
+      <div class="wizard-step locked" id="wizardStep2" data-step="2">
+        <div class="wizard-step-head" data-step="2">
+          <span class="wizard-step-num" data-num="2"></span>
+          <span class="wizard-step-title">Plan Your Meals</span>
+        </div>
+        <div class="wizard-step-body hidden">
+          <div class="section-head">
+            <p>Add days, pick meals for each slot. Costs update automatically.</p>
+            <div class="btn-row">
+              <button id="addDayBtn" class="btn-secondary">+ Add Day</button>
+              <button id="clearPlanBtn" class="btn-ghost">Clear All</button>
+            </div>
+          </div>
+          <div id="daysContainer" class="days-grid"></div>
+          <div class="btn-row wizard-actions">
+            <button id="step2ContinueBtn" class="btn-primary">Continue to Review ▸</button>
+          </div>
         </div>
       </div>
 
-      <!-- ── TAB 2: Recipe Cards ───────────────────────────────────── -->
-      <div class="tab-pane hidden" id="tab-recipes">
-        <div class="tab-intro">
-          <p>One card per meal — ingredients scaled to your group. Print and give each cook lead their card.</p>
+      <!-- Step 3: Review & Costs -->
+      <div class="wizard-step locked" id="wizardStep3" data-step="3">
+        <div class="wizard-step-head" data-step="3">
+          <span class="wizard-step-num" data-num="3"></span>
+          <span class="wizard-step-title">Review &amp; Costs</span>
         </div>
-        <div id="recipeCardsOutput" class="recipe-cards-grid">
-          <div class="empty-plan-msg">Select meals above to generate recipe cards.</div>
+        <div class="wizard-step-body hidden">
+          <h3>Menu Coverage</h3>
+          <div id="coverageReport" class="coverage-grid"></div>
+
+          <h3 class="wizard-subhead">Cost Per Scout Breakdown</h3>
+          <p class="panel-sub">See exactly how each meal affects your budget.</p>
+          <div class="table-wrap">
+            <table id="costTable" class="cost-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Meal</th>
+                  <th>Recipe</th>
+                  <th class="num">Price Tier</th>
+                  <th class="num">Running Total</th>
+                </tr>
+              </thead>
+              <tbody id="costTableBody">
+                <tr class="empty-row"><td colspan="5">No meals selected yet. Add meals above.</td></tr>
+              </tbody>
+              <tfoot id="costTableFoot"></tfoot>
+            </table>
+          </div>
+
+          <div class="btn-row wizard-actions">
+            <button id="goToShopBtn" class="btn-primary">Go to Shopping List ▸</button>
+          </div>
         </div>
       </div>
 
-      <!-- ── TAB 3: Schedule & Duties ─────────────────────────────── -->
-      <div class="tab-pane hidden" id="tab-schedule">
-        <div class="tab-intro">
-          <p>Fill in names before you print. Every scout needs a job for every meal.</p>
-        </div>
-        <div id="scheduleOutput">
-          <div class="empty-plan-msg">Select meals above to generate the schedule.</div>
-        </div>
-      </div>
+    </div>
 
-    </section>
+    <!-- ── SHOP TAB: Your Camp Plan output ──────────────────────────────── -->
+    <div class="main-tab-pane hidden" id="mainpane-shop">
+      <section class="panel scout-output" id="scoutOutput">
+
+        <div class="output-header">
+          <div>
+            <h2>Your Camp Plan</h2>
+            <p class="panel-sub">Pick a tab, fill in names, then print — or download a file.</p>
+          </div>
+          <div class="btn-row">
+            <button id="printScoutBtn" class="btn-primary">Print This Tab</button>
+            <span class="export-divider">Save for leaders:</span>
+            <button id="downloadShoppingCsvBtn" class="btn-secondary">Shopping .csv</button>
+            <button id="downloadCostCsvBtn" class="btn-secondary">Cost Report .csv</button>
+            <button id="downloadJsonBtn" class="btn-secondary">Plan .json</button>
+          </div>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" data-tab="shopping" role="tab">Shopping List</button>
+          <button class="tab-btn" data-tab="recipes"  role="tab">Recipe Cards</button>
+          <button class="tab-btn" data-tab="schedule" role="tab">Schedule &amp; Duties</button>
+        </div>
+
+        <!-- ── TAB 1: Shopping List ──────────────────────────────────── -->
+        <div class="tab-pane" id="tab-shopping">
+          <div class="tab-intro">
+            <p>Check off items as you put them in the cart. Click <strong>Shop at Walmart</strong> to search the current price.</p>
+            <div class="legend-row">
+              <span class="grid-legend"><span class="legend-dot dot-meat"></span>Meat &amp; Protein</span>
+              <span class="grid-legend"><span class="legend-dot dot-dairy"></span>Dairy &amp; Eggs</span>
+              <span class="grid-legend"><span class="legend-dot dot-produce"></span>Produce &amp; Canned</span>
+              <span class="grid-legend"><span class="legend-dot dot-dry"></span>Dry Goods</span>
+              <span class="grid-legend"><span class="legend-dot dot-other"></span>Other</span>
+            </div>
+          </div>
+          <div class="excel-wrap">
+            <table class="excel-grid" id="shoppingGrid">
+              <thead>
+                <tr>
+                  <th class="xcol-chk"><input type="checkbox" id="checkAll" title="Check all" /></th>
+                  <th class="xcol-cat">Cat.</th>
+                  <th class="xcol-item">Item</th>
+                  <th class="xcol-qty xnum">Qty</th>
+                  <th class="xcol-unit">Unit</th>
+                  <th class="xcol-product">Walmart Product</th>
+                  <th class="xcol-price xnum">Est. Price</th>
+                  <th class="xcol-meal">Used In</th>
+                  <th class="xcol-link">Shop</th>
+                </tr>
+              </thead>
+              <tbody id="shoppingGridBody">
+                <tr class="xempty"><td colspan="9">Select meals in the Plan tab — your shopping list builds automatically.</td></tr>
+              </tbody>
+              <tfoot id="shoppingGridFoot"></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── TAB 2: Recipe Cards ───────────────────────────────────── -->
+        <div class="tab-pane hidden" id="tab-recipes">
+          <div class="tab-intro">
+            <p>One card per meal — ingredients scaled to your group. Print and give each cook lead their card.</p>
+          </div>
+          <div id="recipeCardsOutput" class="recipe-cards-grid">
+            <div class="empty-plan-msg">Select meals in the Plan tab to generate recipe cards.</div>
+          </div>
+        </div>
+
+        <!-- ── TAB 3: Schedule & Duties ─────────────────────────────── -->
+        <div class="tab-pane hidden" id="tab-schedule">
+          <div class="tab-intro">
+            <p>Fill in names before you print. Every scout needs a job for every meal.</p>
+          </div>
+          <div id="scheduleOutput">
+            <div class="empty-plan-msg">Select meals in the Plan tab to generate the schedule.</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
 
   </main>
 
+  <!-- ── EDIT RECIPE MODAL ──────────────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="recipeEditOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+      <div class="modal-head">
+        <h3 id="editModalTitle">Edit Recipe</h3>
+        <button type="button" class="modal-close" id="editModalCloseBtn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="panel-sub">Saving updates this recipe for everyone — changes are written straight back to the shared recipe sheet.</p>
+        <div class="submit-fields">
+          <div class="field-group">
+            <label for="editTitle">Recipe title</label>
+            <input id="editTitle" type="text" placeholder="e.g. Pancake Tacos">
+          </div>
+          <div class="field-group">
+            <label for="editMealType">Meal type</label>
+            <select id="editMealType">
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="dessert">Dessert</option>
+              <option value="cracker_barrel">Cracker Barrel</option>
+              <option value="side">Side</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="editServings">Servings (ingredients below feed this many)</label>
+            <input id="editServings" type="number" min="1" value="4">
+          </div>
+          <div class="field-group">
+            <label for="editDifficulty">Difficulty</label>
+            <select id="editDifficulty">
+              <option value="1">1 - Easy</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 - Advanced</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="editPrepMinutes">Prep minutes</label>
+            <input id="editPrepMinutes" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="editCookMinutes">Cook minutes</label>
+            <input id="editCookMinutes" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="editEquipment">Equipment needed (comma-separated)</label>
+            <input id="editEquipment" type="text" placeholder="e.g. Camp stove, Griddle">
+          </div>
+          <div class="field-group">
+            <label for="editCategories">Tags (comma-separated, optional)</label>
+            <input id="editCategories" type="text" placeholder="e.g. kid_favorite">
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Common allergens (optional)</label>
+          <div class="dietary-filters edit-allergens">
+            <label class="dietary-check"><input type="checkbox" data-allergen="dairy"> Dairy</label>
+            <label class="dietary-check"><input type="checkbox" data-allergen="egg"> Egg</label>
+            <label class="dietary-check"><input type="checkbox" data-allergen="gluten/wheat"> Gluten/Wheat</label>
+            <label class="dietary-check"><input type="checkbox" data-allergen="nuts"> Tree Nuts</label>
+            <label class="dietary-check"><input type="checkbox" data-allergen="peanuts"> Peanuts</label>
+          </div>
+        </div>
+
+        <div class="submit-ingredients">
+          <h4>Ingredients</h4>
+          <div id="editIngredients"></div>
+          <button id="editAddIngredientBtn" class="btn-secondary" type="button">+ Add Ingredient</button>
+        </div>
+
+        <div class="field-group">
+          <label for="editDirections">Directions</label>
+          <textarea id="editDirections" rows="3" placeholder="How to cook it..."></textarea>
+        </div>
+        <div class="field-group">
+          <label for="editCookNotes">Cook notes / tips (one per line, optional)</label>
+          <textarea id="editCookNotes" rows="2"></textarea>
+        </div>
+        <div class="submit-fields">
+          <div class="field-group">
+            <label for="editCost">Estimated cost per scout ($, optional)</label>
+            <input id="editCost" type="number" min="0" step="0.05" placeholder="e.g. 1.85">
+          </div>
+          <div class="field-group">
+            <label for="editWalmartNote">Walmart shopping note (optional)</label>
+            <input id="editWalmartNote" type="text" placeholder="e.g. pancake mix $3, syrup $4">
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <div id="editStatus" class="submit-status hidden"></div>
+        <div class="btn-row">
+          <button type="button" class="btn-ghost" id="editCancelBtn">Cancel</button>
+          <button type="button" class="btn-primary" id="editSaveBtn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RECIPE DETAIL MODAL ────────────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="recipeViewOverlay">
+    <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="viewModalTitle">
+      <div class="modal-head">
+        <h3 id="viewModalTitle">Recipe</h3>
+        <button type="button" class="modal-close" id="viewModalCloseBtn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="viewModalBody"></div>
+      <div class="modal-foot">
+        <div class="btn-row">
+          <button type="button" class="btn-ghost" id="viewCloseBtn">Close</button>
+          <button type="button" class="btn-primary" id="viewEditBtn">✏️ Edit Recipe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <p>100% client-side &mdash; no server needed. All prices are Walmart estimates and may vary by location.</p>
+    <p>Recipe data loads from a shared Google Sheet, so an internet connection is required. All prices are Walmart estimates and may vary by location.</p>
   </footer>
 
-  <script src="data/recipes.js"></script>
-  <script src="data/walmart_prices.js"></script>
-  <script src="data/grab_and_go.js"></script>
-  <script src="data/recipe_details.js"></script>
-  <script src="data/recipe_header_images.js"></script>
-  <script src="data/cooking_instructions.js"></script>
-  <script src="data/cooking_instructions2.js"></script>
-  <script src="data/cooking_instructions3.js"></script>
+  <script src="data/walmart_item_prices.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

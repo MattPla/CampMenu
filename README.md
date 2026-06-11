@@ -9,16 +9,16 @@ Generated: 2026-06-08
 - `index.html` — the app entry point.
 - `assets/styles.css` — app styling.
 - `assets/app.js` — all app logic.
-- `data/recipes.js` — recipe data loaded as a plain JavaScript variable, so the app does not need a backend.
-- `data/recipes.json` — same recipe data in JSON format for future development.
-- `data/recipes.csv` — spreadsheet-friendly recipe index.
+- `data/walmart_item_prices.js` — generic Walmart item price reference data for the shopping list.
+- `data/recipes.json` / `data/recipes.csv` — reference snapshot of recipe data (not loaded by the app).
 - `data/tools.json` — unique cooking tools/equipment list.
 - `docs/schema.md` — data model.
 - `docs/static_app_notes.md` — how the app works and how to host it.
+- `docs/community_recipes.md` — how recipe data is stored in and served from a Google Sheet.
 
 ## How to run
 
-Open `index.html` in a browser, or upload the full folder to any static web host. No database, server, login, or build step is required.
+Open `index.html` in a browser, or upload the full folder to any static web host. No database, login, or build step is required — but recipe data is fetched from a Google Sheet on load, so an internet connection is required (see `docs/community_recipes.md`).
 
 ## What the app does
 
